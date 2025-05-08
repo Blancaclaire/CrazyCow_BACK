@@ -34,45 +34,43 @@ INSERT INTO CUSTOMERS (customer_id, name, surname, email, phone_number, user_nam
 (13001, 'Bob', 'Johnson', 'bob@example.com', '987654321', 'bobby_j', 'pass456', '456 Elm St'),
 (13002, 'Carol', 'Williams', 'carol@example.com', '555123456', 'carol_w', 'secret789', '789 Oak St');
 
--- PRODUCTOS (transformado a IDs numéricos)
 INSERT INTO PRODUCTS (product_id, category_id, product_name, description, price, image) VALUES
--- Burgers (1000)
-(8000, 1000, 'Cowabunga Burger', 'Juicy beef patty, crispy lettuce, tomato, melted cheese and our signature special sauce.', 9.99, 'burger1.jpg'),
-(8001, 1000, 'Moo Moo Madness', 'Double beef patties with spicy BBQ sauce, cheddar cheese, crispy onion rings and pickles.', 12.99, 'burger2.jpg'),
-(8002, 1000, 'Rancher Rumble', 'Beef patty topped with ranch dressing, crispy bacon, fresh lettuce, tomato and a sprinkle of fried onions.', 10.99, 'burger3.jpg'),
-(8003, 1000, 'Funky Fries Burger', 'Beef patty with melted cheese, crispy potato rounds, special sauce and a kick of jalapeños.', 11.49, 'burger4.jpg'),
-(8004, 1000, 'Happy Hooves', 'Triple beef patty, melted cheese, crunchy bacon, fresh lettuce and our legendary special sauce.', 13.99, 'burger5.jpg'),
-(8005, 1000, 'Mad Cow Melt', 'Beef patty with melted Swiss cheese, grilled onions and a dash of spicy mustard.', 10.49, 'burger6.jpg'),
-(8006, 1000, 'Bovine Bonanza', 'Double beef patty with sharp cheddar cheese, tangy pickles and an extra dose of special sauce.', 11.49, 'burger7.jpg'),
-(8007, 1000, 'Lettuce Lunacy', 'Beef patty, fresh lettuce, tomato, creamy avocado and a zesty lime dressing.', 10.99, 'burger8.jpg'),
-(8008, 1000, 'The Cow-ntdown', 'Mini burger featuring a beef patty, melted cheese and a blend of signature sauces for a quick bite.', 7.99, 'burger9.jpg'),
-(8009, 1000, 'Pasture Party', 'Angus beef patty with Pepper Jack cheese, roasted jalapeños and a fresh pico de gallo topping.', 12.49, 'burger10.jpg'),
+-- Burgers (1000) - Rango 8000-8099
+(8000, 1000, 'Cowabunga Burger', 'Juicy beef patty, crispy lettuce, tomato, melted cheese and our signature special sauce.', 9.99, 'burguer2.png'),
+(8001, 1000, 'Moo Moo Madness', 'Double beef patties with spicy BBQ sauce, cheddar cheese, crispy onion rings and pickles.', 12.99, 'burguer4.png'),
+(8002, 1000, 'Rancher Rumble', 'Beef patty topped with ranch dressing, crispy bacon, fresh lettuce, tomato and a sprinkle of fried onions.', 10.99, 'burguer1.png'),
+(8003, 1000, 'Funky Fries Burger', 'Beef patty with melted cheese, crispy potato rounds, special sauce and a kick of jalapeños.', 11.49, 'burguer3.png'),
+(8004, 1000, 'Happy Hooves', 'Triple beef patty, melted cheese, crunchy bacon, fresh lettuce and our legendary special sauce.', 13.99, 'burguer5.png'),
+(8005, 1000, 'Mad Cow Melt', 'Beef patty with melted Swiss cheese, grilled onions and a dash of spicy mustard.', 10.49, 'burguer7.png'),
+(8006, 1000, 'Bovine Bonanza', 'Double beef patty with sharp cheddar cheese, tangy pickles and an extra dose of special sauce.', 11.49, 'burguer7.png'),
+(8007, 1000, 'Lettuce Lunacy', 'Beef patty, fresh lettuce, tomato, creamy avocado and a zesty lime dressing.', 10.99, 'burguer6.png'),
+(8008, 1000, 'The Cow-ntdown', 'Mini burger featuring a beef patty, melted cheese and a blend of signature sauces for a quick bite.', 7.99, 'burguer16.png'),
+(8009, 1000, 'Pasture Party', 'Angus beef patty with Pepper Jack cheese, roasted jalapeños and a fresh pico de gallo topping.', 12.49, 'burger10.png'),
 
--- For Bitting (1001)
-(8010, 1001, 'Crazy Chicken Chunks', 'Crispy chicken nuggets tossed in a zesty spice blend, served with a tangy dip.', 5.49, 'chicken1.jpg'),
-(8011, 1001, 'Raging Ring Rings', 'Golden battered onion rings, fried to perfection and served with a smoky dipping sauce.', 4.99, 'onion_rings.jpg'),
-(8012, 1001, 'Cheesy Twisters', 'Breaded mozzarella sticks with a delightfully melty center, paired with our homemade marinara sauce.', 6.49, 'mozzarella.jpg'),
-(8013, 1001, 'Tot-tally Crazy Tots', 'Crispy tater tots loaded with CrazyCow seasoning and served with a spicy dipping sauce.', 4.99, 'tater_tots.jpg'),
-(8014, 1001, 'Buffalo Bonanza Bites', 'Spicy buffalo-style chicken bites drizzled with cool ranch dressing for an explosion of flavor.', 5.99, 'buffalo_bites.jpg'),
+-- For Bitting (1001) - Rango 8100-8199
+(8100, 1001, 'Cheese Fries', 'Crispy fries topped with melted cheese sauce.', 5.49, 'picoteo16.png'),
+(8101, 1001, 'Spring Rolls', 'Golden fried spring rolls with vegetable filling.', 4.99, 'picoteo15.png'),
+(8102, 1001, 'Mozzarella Sticks', 'Breaded mozzarella sticks with a delightfully melty center, paired with our homemade marinara sauce.', 6.49, 'picoteo14.png'),
+(8103, 1001, 'Classic French Fries', 'Crispy golden french fries with sea salt.', 4.99, 'picoteo12.png'),
+(8104, 1001, 'Shoestring Fries', 'Thin-cut fries with a crispy texture.', 5.99, 'picoteo7.png'),
 
--- Drinks (1002)
-(8015, 1002, 'Coca-Cola', 'Refreshing cola drink', 1.99, 'coke.jpg'),
-(8016, 1002, 'Coca-Cola Zero', 'Zero sugar cola drink', 1.99, 'coke_zero.jpg'),
-(8017, 1002, 'Fanta Orange', 'Sparkling orange drink', 2.49, 'fanta.jpg'),
-(8018, 1002, 'Aquarius Lemon', 'Sports drink lemon flavor', 2.90, 'aquarius.jpg'),
-(8019, 1002, 'Fuze Tea', 'Iced tea with fruit flavors', 2.29, 'fuze_tea.jpg'),
-(8020, 1002, 'Red Bull', 'Energy drink', 3.50, 'red_bull.jpg'),
-(8021, 1002, 'Mineral Water', 'Natural mineral water', 1.99, 'water.jpg'),
+-- Drinks (1002) - Rango 8200-8299
+(8200, 1002, 'Draft Beer', 'Refreshing golden draft beer served in a chilled mug.', 4.99, 'bebida7.png'),
+(8201, 1002, 'Cola Bottle', 'Classic cola in an iconic glass bottle.', 2.99, 'bebida4.png'),
+(8202, 1002, 'Cranberry Spritzer', 'Refreshing cranberry juice cocktail with a splash of soda.', 3.99, 'bebida6.png'),
+(8203, 1002, 'Sunset Iced Tea', 'Vibrant layered iced tea with citrus and grenadine', 4.49, 'bebida2.png'),
+(8204, 1002, 'Classic Cola', 'Traditional cola in a glass bottle', 2.99, 'bebida3.png'),
+(8205, 1002, 'Amber Ale', 'Rich amber-colored ale with a smooth finish.', 5.99, 'bebida1.png'),
 
--- Desserts (1003)
-(8022, 1003, 'Ice Cream', 'Vanilla ice cream topped with chocolate syrup', 3.99, 'ice_cream.jpg'),
-(8023, 1003, 'CheeseCake', 'Creamy cheesecake with a buttery graham cracker crust and strawberry compote', 4.49, 'cheesecake.jpg'),
-(8024, 1003, 'Apple Pie', 'Homestyle apple pie with a flaky crust', 3.99, 'apple_pie.jpg'),
-(8025, 1003, 'Cowabunga Sundae', 'Vanilla ice cream drenched in rich chocolate fudge, crowned with whipped cream and a cherry', 4.99, 'sundae.jpg'),
-(8026, 1003, 'Moo Moo Mousse', 'Decadent chocolate mousse with a hint of espresso, topped with a silky caramel drizzle', 4.49, 'mousse.jpg'),
-(8027, 1003, 'CrazyCow Brownie', 'A fudgy, decadent brownie loaded with walnuts and a swirl of creamy ganache', 3.99, 'brownie.jpg'),
-(8028, 1003, 'Bovine Banana Split', 'A classic banana split featuring three scoops of ice cream, drizzled with hot fudge', 5.49, 'banana_split.jpg'),
-(8029, 1003, 'Funky Fudge Cake', 'Moist and rich fudge cake layered with velvety chocolate frosting', 4.99, 'fudge_cake.jpg');
+-- Desserts (1003) - Rango 8300-8399
+(8300, 1003, 'Bacon Sundae', 'Vanilla ice cream with bacon bits and maple syrup.', 3.99, 'postre11.png'),
+(8301, 1003, 'Cookie Delight', 'Warm cookie with ice cream and chocolate sauce.', 4.49, 'postre10.png'),
+(8302, 1003, 'Berry Cheesecake', 'Classic cheesecake with mixed berry topping.', 3.99, 'postre9.png'),
+(8303, 1003, 'Matcha Cheesecake', 'Japanese-style green tea cheesecake.', 4.99, 'postre7.png'),
+(8304, 1003, 'Mango Cheesecake', 'Creamy cheesecake with mango coulis.', 4.49, 'postre8.png'),
+(8305, 1003, 'Berry Pancakes', 'Fluffy pancakes with fresh berries and syrup.', 3.99, 'postre5.png'),
+(8306, 1003, 'Blueberry Cheesecake', 'New York style cheesecake with blueberry topping.', 5.49, 'postre6.png'),
+(8307, 1003, 'Strawberry Milkshake', 'Creamy milkshake with fresh strawberries.', 4.99, 'postre4.png');
 
 -- INGREDIENTS 
 INSERT INTO INGREDIENTS (ingredient_id, ingredient_name) VALUES
@@ -105,13 +103,16 @@ INSERT INTO PAYMENTS (payment_id, order_id, holder_name, holder_number, cvv, car
 (12000, 11000, 'Alice Smith', '4111111111111111', '123', 'Visa', 15.50),
 (12001, 11001, 'Bob Johnson', '5500000000000004', '456', 'MasterCard', 22.00);
 
--- PRODUCTS_ORDER 
+-- PRODUCTS_ORDER (actualizado con nuevos IDs)
 INSERT INTO PRODUCTS_ORDER (order_id, product_id, quantity) VALUES
-(11000, 8000, 2),  -- Cowabunga Burger
-(11000, 8002, 1);  -- Rancher Rumble
+(11000, 8000, 2),  -- Cowabunga Burger (antes 8000)
+(11000, 8103, 1),  -- Classic French Fries (antes 8013)
+(11001, 8201, 3),  -- Cola Bottle (antes 8016)
+(11001, 8302, 1);  -- Berry Cheesecake (antes 8024)
 
--- INGREDIENTS_PRODUCTS 
+-- INGREDIENTS_PRODUCTS (actualizado con nuevos IDs)
 INSERT INTO INGREDIENTS_PRODUCTS (product_id, ingredient_id) VALUES
+
 (8000, 2000),  -- Cowabunga Burger -> Beef Patty
 (8000, 2001),  -- Cowabunga Burger -> Lettuce
 (8000, 2002),  -- Cowabunga Burger -> Tomato
@@ -119,7 +120,16 @@ INSERT INTO INGREDIENTS_PRODUCTS (product_id, ingredient_id) VALUES
 (8000, 2004),  -- Cowabunga Burger -> Special Sauce
 (8001, 2000),  -- Moo Moo Madness -> Beef Patty
 (8001, 2010),  -- Moo Moo Madness -> BBQ Sauce
-(8001, 2003);  -- Moo Moo Madness -> Cheese
+(8001, 2003),  -- Moo Moo Madness -> Cheese
+
+-- Ingredientes para snacks (rango 8100-8199)
+(8102, 2003),  -- Mozzarella Sticks -> Cheese
+(8102, 2005),  -- Mozzarella Sticks -> Potatoes
+(8103, 2005),  -- Classic French Fries -> Potatoes
+
+-- Ingredientes para postres (rango 8300-8399)
+(8302, 2001),  -- Berry Cheesecake -> Lettuce (decoración)
+(8302, 2003);  -- Berry Cheesecake -> Cheese
 
 -- ALLERGEN_INGREDIENTS 
 INSERT INTO ALLERGEN_INGREDIENTS (allergen_id, ingredient_id) VALUES
@@ -130,5 +140,5 @@ INSERT INTO ALLERGEN_INGREDIENTS (allergen_id, ingredient_id) VALUES
 
 -- APPLICANTS 
 INSERT INTO APPLICANTS (applicant_id, job_id, name, surname, email, phone_number, address, resume, aplication_date) VALUES
-(7000, 6002, 'Sarah', 'Connor', 'sarah.connor@example.com', '2125554444', '300 Future St', '/resumes/sarah_connor.pdf', '2025-01-10'),
-(7001, 6001, 'Kyle', 'Reese', 'kyle.reese@example.com', '3125555555', '400 Resistance Ave', '/resumes/kyle_reese.pdf', '2025-01-12');
+(7000, 6002, 'Sarah', 'Connor', 'sarah.connor@example.com', '2125554444', '300 Future St', 'sarah_connor.pdf', '2025-01-10'),
+(7001, 6001, 'Kyle', 'Reese', 'kyle.reese@example.com', '3125555555', '400 Resistance Ave', 'kyle_reese.pdf', '2025-01-12');

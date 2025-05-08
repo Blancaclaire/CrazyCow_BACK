@@ -1,1 +1,1 @@
-# CrazyCow_BACK
+URLBBDD: "jdbc:mysql:// db.cnfp5sduwtx2.us-east-1.rds.amazonaws.com:3306/CrazyCowDB"
