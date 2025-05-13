@@ -8,7 +8,7 @@ import java.util.ArrayList;
 public class Ingredient {
     private int ingredient_id;
     private String name;
-    private ArrayList<Allergen> listAllergen = new ArrayList<Allergen>();
+    //private ArrayList<Allergen> listAllergen = new ArrayList<Allergen>();
 
     public int get_ingredient_id() {
         return ingredient_id;
@@ -41,7 +41,6 @@ public class Ingredient {
         return "Ingredient{" +
                 "ingredient_id='" + ingredient_id + '\'' +
                 ", name='" + name + '\'' +
-                ", listAllergen=" + listAllergen +
                 '}';
     }
 

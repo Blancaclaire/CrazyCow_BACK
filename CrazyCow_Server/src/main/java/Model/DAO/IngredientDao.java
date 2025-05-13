@@ -14,7 +14,7 @@ import java.util.ArrayList;
 public class IngredientDao implements IDao {
 
 
-    private final String SQL_FIND_BY_PRODUCT = "SELECT * FROM INGREDIENTS ING inner join INGREDIENTS_PRODUCTS IP ON ING.ingredient_id=IP.ingredient_id join PRODUCTS PRO ON PRO.product_id=IP.product_id  where PRO.product_id=?";
+    private final String SQL_FIND_BY_PRODUCT = "SELECT ING.ingredient_id, ING.ingredient_name FROM INGREDIENTS ING inner join INGREDIENTS_PRODUCTS IP ON ING.ingredient_id=IP.ingredient_id inner join PRODUCTS PRO ON PRO.product_id=IP.product_id  where PRO.product_id=? ";
     private IMotorSql motorSql;
 
     public IngredientDao() {

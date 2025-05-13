@@ -22,6 +22,7 @@ public class Product {
     private String image;
 
     ArrayList<Ingredient> listIngredients = new ArrayList<Ingredient>();
+    ArrayList<Allergen> listAllergen = new ArrayList<Allergen>();
 
 
 
@@ -84,6 +85,14 @@ public class Product {
 
     public void setListIngredients(ArrayList<Ingredient> listIngredients) {
         this.listIngredients = listIngredients;
+    }
+
+    public ArrayList<Allergen> getListAllergen() {
+        return listAllergen;
+    }
+
+    public void setListAllergen(ArrayList<Allergen> listAllergen) {
+        this.listAllergen = listAllergen;
     }
 
     //Constructor

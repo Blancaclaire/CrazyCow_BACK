@@ -1,5 +1,6 @@
 package Model.DAO;
 
+import Model.Entities.Allergen;
 import Model.Entities.Ingredient;
 import Model.Entities.Product;
 import Model.MotorMySql.IMotorSql;
@@ -120,7 +121,7 @@ public class ProductDao implements IDao {
                 // Lista para llevar un control de cuántos parámetros vamos a necesitar
                 ArrayList<Integer> parameters = new ArrayList<>();
 
-                // Añadimos condiciones según los filtros
+                // Preparamos la consulta para añadir condiciones según los filtros
                 if (product.getProduct_id() > 0) {
                     sqlBuilder.append(" AND product_id = ?");
                     parameters.add(product.getProduct_id());
@@ -154,13 +155,11 @@ public class ProductDao implements IDao {
                         rs.getDouble("price"),
                         rs.getString("image")
                 );
-
-                IngredientDao ingredientDao = new IngredientDao();
-                ArrayList<Ingredient> ingredients = ingredientDao.findAll(productBd);
-                productBd.setListIngredients(ingredients);
-
                 listProducts.add(productBd);
+
             }
+
+
         } catch (SQLException e) {
             System.out.println("Error en findAll: " + e.getMessage());
         } finally {
@@ -195,10 +194,16 @@ public class ProductDao implements IDao {
                         rs.getString("image")
                 );
 
-                // **Obtener los ingredientes del producto**
+                // **Obtener los ingredientes del producto
                 IngredientDao ingredientDao = new IngredientDao();
                 ArrayList<Ingredient> ingredients = ingredientDao.findAll(product);
                 product.setListIngredients(ingredients);
+
+                // **Obtener los alergenos del producto
+                AllergenDao allergenDao = new AllergenDao();
+                ArrayList<Allergen> allergens = allergenDao.findAll(product);
+                product.setListAllergen(allergens);
+
             }
 
         } catch (SQLException e) {
