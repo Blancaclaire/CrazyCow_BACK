@@ -2,26 +2,40 @@ package Controller.Actions;
 
 import Model.DAO.CustomerDao;
 import Model.Entities.Customer;
+import com.google.gson.Gson;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.Map;
 
 public class CustomerAction implements IAction{
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response, String action, Map<String, String[]> objectParams) {
-        System.out.println("VAlor recibido en action: " + action);
+        System.out.println("Valor recibido en action: " + action);
         String strReturn = "";
 
         switch (action) {
-            case "LOGIN":
-                strReturn = "";
+
+            case "FIND_ALL":
+                //http://localhost:8080/CrazyCow_Server/Controller?ACTION=CUSTOMER.FIND_ALL
+                strReturn =findAll();
                 break;
 
-            case "ADD":
-                //http://localhost:8080/CrazyCow_Server/Controller?ACTION=CUSTOMER.ADD&name=John&surname=Doe&email=john.doe@example.com&phone_number=123456789&user_name=johndoe&password=securepassword&address=123%20Main%20Street
-                strReturn =add(objectParams);
+            case "FIND_BY_ID":
+                //http://localhost:8080/CrazyCow_Server/Controller?ACTION=CUSTOMER.FIND_BY_ID&customer_id=13000
+                strReturn =findById(objectParams);
+                break;
+
+            case "LOGIN":
+                //http://localhost:8080/CrazyCow_Server/Controller?ACTION=CUSTOMER.LOGIN&user_name=johndoe&password=securepassword
+                strReturn = authenticate(objectParams);
+                break;
+
+            case "REGISTER":
+                //http://localhost:8080/CrazyCow_Server/Controller?ACTION=CUSTOMER.REGISTER&name=John&surname=Doe&email=john.doe@example.com&phone_number=123456789&user_name=johndoe&password=securepassword&address=123%20Main%20Street
+                strReturn =register(objectParams);
                 break;
             default:
                 strReturn ="ERROR.Invalid Action";
@@ -31,7 +45,66 @@ public class CustomerAction implements IAction{
         return strReturn;
     }
 
-    public String add (Map<String, String[]>objectParams){
+    public String findAll(){
+        String strReturn ="";
+        CustomerDao customerDao = new CustomerDao();
+
+        Customer customer = new Customer();
+        ArrayList<Customer> listCustomer = customerDao.findAll(customer);
+
+        return Customer.toArrayJson(listCustomer);
+    }
+
+    public  String findById(Map<String, String[]>objectParams){
+        String strReturn="";
+        CustomerDao customerDao = new CustomerDao();
+        Customer filtro = new Customer();
+        if (objectParams.get("customer_id")!=null && objectParams.get("customer_id").length>0){
+            filtro.setCustomer_id(Integer.parseInt(objectParams.get("customer_id")[0]));
+        }
+        else {
+            System.out.println("El parametro customer_id no llego correctamente" );
+        }
+        Customer customer = customerDao.findById(filtro.getCustomer_id());
+        strReturn=Customer.toJson(customer);
+
+        return strReturn;
+    }
+
+
+    public String authenticate(Map<String, String[]>objectParams){
+        String strReturn= "";
+
+        try {
+            CustomerDao customerDao = new CustomerDao();
+            Customer customer = new Customer();
+            //Procesar user_name
+            if (objectParams.get("user_name") != null && objectParams.get("user_name").length > 0) {
+                customer.setUser_name(objectParams.get("user_name")[0]);
+            }
+            if (objectParams.get("password") != null && objectParams.get("password").length > 0) {
+                customer.setPassword(objectParams.get("password")[0]);
+            }
+
+
+            boolean isCustomer = customerDao.authenticate(customer);
+            if (isCustomer) {
+                System.out.println("El usuario puede hacer login");
+                strReturn = "OK";
+            } else {
+                System.out.println("ERROR. El usuario no puede hacer login");
+                strReturn = "NO";
+            }
+
+        }catch (Exception e){
+            strReturn="LOGIN ERROR" + e.getMessage();
+        }
+        return strReturn;
+
+    }
+
+
+    public String register (Map<String, String[]>objectParams){
         String strReturn = "";
         CustomerDao customerDao = new CustomerDao();
         Customer customer = new Customer();
@@ -42,7 +115,7 @@ public class CustomerAction implements IAction{
             // Procesar name
             if (objectParams.get("name")!=null && objectParams.get("name").length>0)
             {
-                System.out.println("VAlor recibido name: " + objectParams.get("name")[0]);
+                System.out.println("Valor recibido name: " + objectParams.get("name")[0]);
                 customer.setName(objectParams.get("name")[0]);
             }
             else{

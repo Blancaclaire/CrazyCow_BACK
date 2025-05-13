@@ -1,5 +1,10 @@
 package Model.Entities;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+
+import java.util.ArrayList;
+
 public class Customer {
 
     private int customer_id;
@@ -109,4 +114,23 @@ public class Customer {
                 ", address='" + address + '\'' +
                 '}';
     }
+
+    public static String toArrayJson(ArrayList<Customer> listCustomer) {
+
+        GsonBuilder builder = new GsonBuilder();
+        builder.setPrettyPrinting();
+
+        Gson gson = builder.create();
+        String resp = gson.toJson(listCustomer);
+        return resp;
+    }
+
+    public static String toJson(Customer customer) {
+        GsonBuilder builder = new GsonBuilder();
+        builder.setPrettyPrinting();
+        Gson gson = builder.create();
+        return gson.toJson(customer);
+    }
+
+
 }

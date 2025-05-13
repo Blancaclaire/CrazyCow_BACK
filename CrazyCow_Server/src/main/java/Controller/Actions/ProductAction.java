@@ -28,7 +28,7 @@ public class ProductAction implements IAction {
                 strReturn = delete(objectParams);
                 break;
             case "FIND_ALL":
-                //Endpoint prueba: http://localhost:8080/CrazyCow_Server/Controller?ACTION=PRODUCT.FIND_ALL
+                //http://localhost:8080/CrazyCow_Server/Controller?ACTION=PRODUCT.FIND_ALL
                 //http://localhost:8080/CrazyCow_Server/Controller?ACTION=PRODUCT.FIND_ALL&category_id=1001
                 strReturn = findAll(objectParams);
                 break;
