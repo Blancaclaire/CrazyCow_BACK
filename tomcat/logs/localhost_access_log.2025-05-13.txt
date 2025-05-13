@@ -11,3 +11,12 @@
 0:0:0:0:0:0:0:1 - - [13/May/2025:13:32:48 +0200] "GET /CrazyCow_Server/Controller?ACTION=PRODUCT.FIND_BY_ID&product_id=8000 HTTP/1.1" 200 562
 0:0:0:0:0:0:0:1 - - [13/May/2025:13:33:48 +0200] "GET /CrazyCow_Server/Controller?ACTION=PRODUCT.FIND_BY_ID&product_id=8000 HTTP/1.1" 200 1031
 0:0:0:0:0:0:0:1 - - [13/May/2025:13:38:21 +0200] "GET /CrazyCow_Server/Controller?ACTION=PRODUCT.FIND_BY_ID&product_id=8000 HTTP/1.1" 200 814
+0:0:0:0:0:0:0:1 - - [13/May/2025:15:12:44 +0200] "GET /CrazyCow_Server/Controller?ACTION=PRODUCT.FIND_BY_ID&product_id=8001 HTTP/1.1" 200 677
+0:0:0:0:0:0:0:1 - - [13/May/2025:17:10:10 +0200] "GET /CrazyCow_Server/Controller?ACTION=CUSTOMER.ADD&name=John&surname=Doe&email=john.doe@example.com&phone_number=123456789&user_name=johndoe&password=securepassword&address=123%20Main%20Street HTTP/1.1" 200 20
+0:0:0:0:0:0:0:1 - - [13/May/2025:17:12:16 +0200] "GET /CrazyCow_Server/Controller?ACTION=CUSTOMER.ADD&name=John&surname=Doe&email=john.doe@example.com&phone_number=123456789&user_name=johndoe&password=securepassword&address=123%20Main%20Street HTTP/1.1" 200 20
+0:0:0:0:0:0:0:1 - - [13/May/2025:17:12:30 +0200] "GET /CrazyCow_Server/Controller?ACTION=CUSTOMER.ADD&name=John&surname=Doe&email=john.doe@example.com&phone_number=123456789&user_name=johndoe&password=securepassword&address=123%20Main%20Street HTTP/1.1" 200 20
+0:0:0:0:0:0:0:1 - - [13/May/2025:17:15:52 +0200] "GET /CrazyCow_Server/Controller?ACTION=CUSTOMER.ADD&name=John&surname=Doe&email=john.doe@example.com&phone_number=123456789&user_name=johndoe&password=securepassword&address=123%20Main%20Street HTTP/1.1" 200 20
+0:0:0:0:0:0:0:1 - - [13/May/2025:17:20:04 +0200] "GET /CrazyCow_Server/Controller?ACTION=CUSTOMER.ADD&name=John&surname=Doe&email=john.doe@example.com&phone_number=123456789&user_name=johndoe&password=securepassword&address=123%20Main%20Street HTTP/1.1" 200 20
+0:0:0:0:0:0:0:1 - - [13/May/2025:17:25:38 +0200] "GET /CrazyCow_Server/Controller?ACTION=CUSTOMER.ADD&name=John&surname=Doe&email=john.doe@example.com&phone_number=123456789&user_name=johndoe&password=securepassword&address=123%20Main%20Street HTTP/1.1" 200 20
+0:0:0:0:0:0:0:1 - - [13/May/2025:17:28:12 +0200] "GET /CrazyCow_Server/Controller?ACTION=CUSTOMER.ADD&user_name=johndoe HTTP/1.1" 200 20
+0:0:0:0:0:0:0:1 - - [13/May/2025:17:32:37 +0200] "GET /CrazyCow_Server/Controller?ACTION=CUSTOMER.ADD&name=John&surname=Doe&email=john.doe@example.com&phone_number=123456789&user_name=johndoe&password=securepassword&address=123%20Main%20Street HTTP/1.1" 200 20

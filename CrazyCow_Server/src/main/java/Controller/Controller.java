@@ -1,5 +1,6 @@
 package Controller;
 
+import Controller.Actions.CustomerAction;
 import Controller.Actions.ProductAction;
 
 import javax.servlet.ServletException;
@@ -47,7 +48,10 @@ public class Controller extends HttpServlet implements IController {
                 out.print(new ProductAction().execute(request, response, arrayAction[1], objectParams));
                 break;
             }
-            case "CUSTOMER":
+            case "CUSTOMER":   {
+                out.print(new CustomerAction().execute(request,response,arrayAction[1],objectParams));
+                break;
+            }
 
             default: {
                 System.out.println(arrayAction[0]);
