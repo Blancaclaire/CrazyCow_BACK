@@ -1,6 +1,8 @@
 package Controller;
 
 import Controller.Actions.CustomerAction;
+import Controller.Actions.EmployeeAction;
+import Controller.Actions.OrderAction;
 import Controller.Actions.ProductAction;
 
 import javax.servlet.ServletException;
@@ -51,6 +53,13 @@ public class Controller extends HttpServlet implements IController {
             case "CUSTOMER":   {
                 out.print(new CustomerAction().execute(request,response,arrayAction[1],objectParams));
                 break;
+            }
+            case "EMPLOYEE":   {
+                out.print(new EmployeeAction().execute(request,response,arrayAction[1],objectParams));
+                break;
+            }
+            case "ORDER":   {
+                out.print(new OrderAction().execute(request,response,arrayAction[1],objectParams));
             }
 
             default: {

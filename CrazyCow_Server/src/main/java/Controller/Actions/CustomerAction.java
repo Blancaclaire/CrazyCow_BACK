@@ -78,7 +78,8 @@ public class CustomerAction implements IAction{
         try {
             CustomerDao customerDao = new CustomerDao();
             Customer customer = new Customer();
-            //Procesar user_name
+
+            //Procesar email y password
             if (objectParams.get("email") != null && objectParams.get("email").length > 0) {
                 customer.setEmail((objectParams.get("email")[0]));
             }

@@ -70,6 +70,10 @@ public class Restaurant {
 
     }
 
+    public Restaurant (int restaurant_id){
+        this.restaurant_id = restaurant_id;
+    }
+
     public Restaurant(int restaurant_id, String adress, String city, String phone_number, String opening_hours, String closing_hours) {
         this.restaurant_id = restaurant_id;
         this.adress = adress;
@@ -77,10 +81,6 @@ public class Restaurant {
         this.phone_number = phone_number;
         this.opening_hours = opening_hours;
         this.closing_hours = closing_hours;
-    }
-
-    public Restaurant (int restaurant_id){
-        this.restaurant_id = restaurant_id;
     }
 
 

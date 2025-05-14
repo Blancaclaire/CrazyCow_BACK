@@ -1,5 +1,9 @@
 package Model.Entities;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+
+import java.util.ArrayList;
 import java.util.Date;
 
 public class Employee {
@@ -18,6 +22,8 @@ public class Employee {
     private String address;
     private Date start_date;
 
+
+    private String city;
 
     //Getter and setter
 
@@ -126,11 +132,33 @@ public class Employee {
         this.start_date = start_date;
     }
 
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
+
 
     //Constructores
 
     public Employee(){
 
+    }
+
+    public Employee(int employee_id, int manager_id, double salary, String name, String surname, String email, String phone_number, String user_name, String password, String address, Date start_date) {
+        this.employee_id = employee_id;
+        this.manager_id = manager_id;
+        this.salary = salary;
+        this.name = name;
+        this.surname = surname;
+        this.email = email;
+        this.phone_number = phone_number;
+        this.user_name = user_name;
+        this.password = password;
+        this.address = address;
+        this.start_date = start_date;
     }
 
     public Employee(int employee_id, int manager_id, int job_id, int restaurant_id, double salary, String name, String surname, String email, String phone_number, String user_name, String password, String address, Date start_date) {
@@ -170,4 +198,15 @@ public class Employee {
                 ", start_date=" + start_date +
                 '}';
     }
+
+    public static String toArrayJson(ArrayList<Employee> listEmployees) {
+
+        GsonBuilder builder = new GsonBuilder();
+        builder.setPrettyPrinting();
+
+        Gson gson = builder.create();
+        String resp = gson.toJson(listEmployees);
+        return resp;
+    }
+
 }

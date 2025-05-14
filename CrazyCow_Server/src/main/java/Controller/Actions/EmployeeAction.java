@@ -1,0 +1,78 @@
+package Controller.Actions;
+
+import Model.DAO.CustomerDao;
+import Model.DAO.EmployeeDao;
+import Model.Entities.Customer;
+import Model.Entities.Employee;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.util.ArrayList;
+import java.util.Map;
+
+public class EmployeeAction implements  IAction{
+    @Override
+    public String execute(HttpServletRequest request, HttpServletResponse response, String action, Map<String, String[]> objectParams) {
+        System.out.println("Valor recibido en action: " + action);
+        String strReturn = "";
+
+        switch (action) {
+
+            case "FIND_ALL":
+                //http://localhost:8080/CrazyCow_Server/Controller?ACTION=EMPLOYEE.FIND_ALL
+                strReturn =findAll();
+                break;
+
+            case "LOGIN" :
+                //http://localhost:8080/CrazyCow_Server/Controller?ACTION=EMPLOYEE.LOGIN&email=clara.alonso.jimenez@gmail.com&password=12345
+                //http://localhost:8080/CrazyCow_Server/Controller?ACTION=EMPLOYEE.LOGIN&email=john.doe@example.com&password=securepassword
+                strReturn = authenticate(objectParams);
+                break;
+
+            default:
+                strReturn ="ERROR.Invalid Action";
+                break;
+        }
+
+        return strReturn;
+    }
+
+    public String findAll(){
+        String strReturn ="";
+        EmployeeDao employeeDao = new EmployeeDao();
+        Employee employee = new Employee();
+        ArrayList<Employee> listEmployees = employeeDao.findAll(employee);
+
+        return Employee.toArrayJson(listEmployees);
+    }
+
+    public String authenticate(Map<String, String[]>objectParams){
+        String strReturn="";
+
+        try{
+            EmployeeDao employeeDao = new EmployeeDao();
+            Employee employee = new Employee();
+
+            //Procesar email y password
+            if (objectParams.get("email") != null && objectParams.get("email").length > 0) {
+                employee.setEmail((objectParams.get("email")[0]));
+            }
+            if (objectParams.get("password") != null && objectParams.get("password").length > 0) {
+                employee.setPassword(objectParams.get("password")[0]);
+            }
+
+            boolean isEmployee = employeeDao.authenticate(employee);
+            if (isEmployee) {
+                System.out.println("El empleado puede loguearse");
+                strReturn = "OK";
+            }else{
+                System.out.println("ERROR. El empleado no puede hacer login o no tiene las credenciales necesarias");
+                strReturn = "NO";
+            }
+
+        }catch (Exception e){
+            strReturn = "LOGIN ERROR"+ e.getMessage();
+        }
+        return strReturn;
+    }
+}

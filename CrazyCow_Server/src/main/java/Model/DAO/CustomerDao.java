@@ -19,7 +19,7 @@ public class CustomerDao implements IDao {
 
     private IMotorSql motorSql;
 
-    //Constructor
+
     public CustomerDao() {
         motorSql = new MotorSql();
     }
