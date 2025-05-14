@@ -29,7 +29,7 @@ public class CustomerAction implements IAction{
                 break;
 
             case "LOGIN":
-                //http://localhost:8080/CrazyCow_Server/Controller?ACTION=CUSTOMER.LOGIN&user_name=johndoe&password=securepassword
+                //http://localhost:8080/CrazyCow_Server/Controller?ACTION=CUSTOMER.LOGIN&email=john.doe@example.com&password=securepassword
                 strReturn = authenticate(objectParams);
                 break;
 
@@ -79,8 +79,8 @@ public class CustomerAction implements IAction{
             CustomerDao customerDao = new CustomerDao();
             Customer customer = new Customer();
             //Procesar user_name
-            if (objectParams.get("user_name") != null && objectParams.get("user_name").length > 0) {
-                customer.setUser_name(objectParams.get("user_name")[0]);
+            if (objectParams.get("email") != null && objectParams.get("email").length > 0) {
+                customer.setEmail((objectParams.get("email")[0]));
             }
             if (objectParams.get("password") != null && objectParams.get("password").length > 0) {
                 customer.setPassword(objectParams.get("password")[0]);

@@ -40,32 +40,31 @@ public class IngredientDao implements IDao {
     public ArrayList findAll(Object bean) {
 
         ArrayList listIngredients = new ArrayList<>();
-
-
-        String sql = SQL_FIND_BY_PRODUCT;
-
-        if (!(bean instanceof Product)) {
-            return listIngredients;
-        }
-        Product product = (Product) bean;
         PreparedStatement ps = null;
         ResultSet rs = null;
-
+        String sql = SQL_FIND_BY_PRODUCT;
 
         try {
-            motorSql.connect();
-            ps = motorSql.getConnection().prepareStatement(SQL_FIND_BY_PRODUCT);
-            ps.setInt(1, product.getProduct_id());
 
-            rs = ps.executeQuery();
+            if (bean != null && bean instanceof Product) {
 
-            while (rs.next()) {
-                Ingredient ingredient = new Ingredient(
-                        rs.getInt("ingredient_id"),
-                        rs.getString("ingredient_name")
-                );
-                listIngredients.add(ingredient);
+                motorSql.connect();
+                Product product = (Product) bean;
+                ps = motorSql.getConnection().prepareStatement(SQL_FIND_BY_PRODUCT);
+                ps.setInt(1, product.getProduct_id());
 
+                rs = ps.executeQuery();
+
+                while (rs.next()) {
+                    Ingredient ingredient = new Ingredient(
+                            rs.getInt("ingredient_id"),
+                            rs.getString("ingredient_name")
+                    );
+                    listIngredients.add(ingredient);
+
+                }
+            } else {
+                System.out.println("El objeto introducido no es un empelado");
             }
         } catch (SQLException sqlEx) {
             System.out.println("Error end findAllProducts" + sqlEx.getMessage());

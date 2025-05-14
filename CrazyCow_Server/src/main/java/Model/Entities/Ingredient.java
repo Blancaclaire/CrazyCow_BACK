@@ -8,6 +8,7 @@ import java.util.ArrayList;
 public class Ingredient {
     private int ingredient_id;
     private String name;
+
     //private ArrayList<Allergen> listAllergen = new ArrayList<Allergen>();
 
     public int get_ingredient_id() {

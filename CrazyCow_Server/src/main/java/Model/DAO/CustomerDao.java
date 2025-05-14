@@ -12,7 +12,7 @@ import java.util.ArrayList;
 
 public class CustomerDao implements IDao {
 
-    private final String SQL_LOGIN = "SELECT * FROM CUSTOMERS WHERE user_name = ? and password = ? ";
+    private final String SQL_LOGIN = "SELECT * FROM CUSTOMERS WHERE email = ? and password = ? ";
     private final String SQL_ADD_CUSTOMER = "INSERT INTO CUSTOMERS (name, surname, email, phone_number, user_name, password, address) VALUES (?,?,?,?,?,?,?)";
     private final String SQL_FIND_ALL = "SELECT * FROM CUSTOMERS WHERE 1=1";
     private final String SQL_FIND_BY_ID = "SELECT * FROM CUSTOMERS WHERE customer_id = ?";
@@ -35,7 +35,7 @@ public class CustomerDao implements IDao {
                 Customer customer = (Customer) bean;
                 motorSql.connect();
                 ps = motorSql.getConnection().prepareStatement(SQL_LOGIN);
-                ps.setString(1, customer.getUser_name());
+                ps.setString(1, customer.getEmail());
                 ps.setString(2, customer.getPassword());
 
                 rs = ps.executeQuery();
