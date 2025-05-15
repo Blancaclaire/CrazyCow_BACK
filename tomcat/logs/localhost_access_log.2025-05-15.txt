@@ -1,0 +1,6 @@
+0:0:0:0:0:0:0:1 - - [15/May/2025:13:29:08 +0200] "GET /CrazyCow_Server/Controller?ACTION=JOB_OFFER.FIND_ALL HTTP/1.1" 200 2
+0:0:0:0:0:0:0:1 - - [15/May/2025:13:32:47 +0200] "GET /CrazyCow_Server/Controller?ACTION=JOB_OFFER.FIND_ALL HTTP/1.1" 200 2
+0:0:0:0:0:0:0:1 - - [15/May/2025:13:35:05 +0200] "GET /CrazyCow_Server/Controller?ACTION=JOB_OFFER.FIND_ALL HTTP/1.1" 200 539
+0:0:0:0:0:0:0:1 - - [15/May/2025:13:36:11 +0200] "GET /CrazyCow_Server/Controller?ACTION=JOB_OFFER.FIND_ALL&job_offer_id=1 HTTP/1.1" 200 285
+0:0:0:0:0:0:0:1 - - [15/May/2025:14:25:32 +0200] "GET /CrazyCow_Server/Controller?ACTION=APPLICANT.ADD&name=Emma&surname&Lopez&email=emma.lopez@example.com&phone_number=987654321&address=Avenida%20Libertad%2045&resume=emma_lopez_cv.pdf HTTP/1.1" 200 -
+0:0:0:0:0:0:0:1 - - [15/May/2025:14:26:27 +0200] "GET /CrazyCow_Server/Controller?ACTION=APPLICANT.ADD&name=Emma&surname&Lopez&email=emma.lopez@example.com&phone_number=987654321&address=Avenida%20Libertad%2045&resume=emma_lopez_cv.pdf HTTP/1.1" 200 46

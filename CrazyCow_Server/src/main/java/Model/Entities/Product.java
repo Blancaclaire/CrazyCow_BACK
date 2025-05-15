@@ -1,7 +1,5 @@
 package Model.Entities;
 
-import Exceptions.DuplicateIngredientException;
-import Exceptions.IngredientNotFoundException;
 import Model.DAO.IngredientDao;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;

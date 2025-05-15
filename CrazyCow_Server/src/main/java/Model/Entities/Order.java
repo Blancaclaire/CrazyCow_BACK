@@ -18,6 +18,7 @@ public class Order {
     private double total;
     private String location;
 
+    ArrayList<OrderDetail> order_details;
 
     //Getter and Setter
 
@@ -75,6 +76,19 @@ public class Order {
 
     public void setLocation(String location) {
         this.location = location;
+    }
+
+    public ArrayList<OrderDetail> getOrder_details() {
+        return order_details;
+    }
+
+    public void setOrder_details(ArrayList<OrderDetail> order_details) {
+        this.order_details = order_details;
+    }
+
+    //METODO PARA AÑADIR PRODUCTOS
+    public void addOrderDetail(OrderDetail orderDetail){
+        this.order_details.add(orderDetail);
     }
 
     //Constructores

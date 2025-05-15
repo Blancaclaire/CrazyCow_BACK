@@ -1,7 +1,6 @@
 package Model.DAO;
 
 import Model.Entities.Employee;
-import Model.Entities.Restaurant;
 import Model.MotorMySql.IMotorSql;
 import Model.MotorMySql.MotorSql;
 
@@ -91,11 +90,6 @@ public class EmployeeDao implements IDao {
 
                 );
 
-
-
-                /*Obtener el restaurant_id mediante RestaurantDao
-                RestaurantDao restaurantDao = new RestaurantDao();
-                Restaurant restaurant = restaurantDao.findByIdEmployee(employee);*/
 
                 listEmployees.add(employee);
             }
