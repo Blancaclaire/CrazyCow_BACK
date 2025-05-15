@@ -117,9 +117,9 @@ INSERT INTO ALLERGENS (allergen_name) VALUES
 ('Nuts');
 
 -- ORDERS (sin especificar order_id)
-INSERT INTO ORDERS (customer_id, restaurant_id, order_date, order_hour, order_status, total, location) VALUES
-(13000, 10000, '2025-01-01', '12:00:00', 'Delivered', 15.50, '123 Main St'),
-(13001, 10001, '2025-01-02', '13:00:00', 'In Preparation', 22.00, '456 Elm St');
+INSERT INTO ORDERS (customer_id, restaurant_id, order_date, order_status, total, location) VALUES
+(13000, 10000, '2025-01-01', 'Delivered', 15.50, '123 Main St'),
+(13001, 10001, '2025-01-02', 'In Preparation', 22.00, '456 Elm St');
 
 -- PAYMENTS (sin especificar payment_id)
 INSERT INTO PAYMENTS (order_id, holder_name, holder_number, cvv, card_type, price) VALUES
@@ -163,3 +163,12 @@ INSERT INTO ALLERGEN_INGREDIENTS (allergen_id, ingredient_id) VALUES
 INSERT INTO APPLICANTS (job_id, name, surname, email, phone_number, address, resume, aplication_date) VALUES
 (6002, 'Sarah', 'Connor', 'sarah.connor@example.com', '2125554444', '300 Future St', '\CrazyCow_FRONT\imagenes\sarah_connor.pdf', '2025-01-10'),
 (6001, 'Kyle', 'Reese', 'kyle.reese@example.com', '3125555555', '400 Resistance Ave', '\CrazyCow_FRONT\imagenes\kyle_reese.pdf', '2025-01-12');
+
+INSERT INTO JOB_OFFERS (job_id, title, description, location) VALUES
+(6003, 'Full Stack Web Developer', 'We are looking for a web developer with experience in frontend and backend to improve our order platform and internal management system.', 'Los Angeles'),
+(6003, 'Frontend Software Engineer', 'Responsible for the development and maintenance of the user interface of our website and mobile application.', 'New York');
+
+
+INSERT INTO JOB_OFFERS_APPLICANTS (job_offer_id, applicant_id, application_date) VALUES
+(1, 7004, '2025-05-14'), -- Postulante para Full Stack Developer
+(2, 7005, '2025-05-15'); -- Postulante para Frontend Engineer

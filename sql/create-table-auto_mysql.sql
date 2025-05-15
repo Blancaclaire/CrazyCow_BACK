@@ -42,7 +42,6 @@ CREATE TABLE PRODUCTS (
 
 CREATE TABLE APPLICANTS (
     applicant_id INT PRIMARY KEY AUTO_INCREMENT, -- IDs del 7000 al 8000
-    job_id INT NOT NULL,
     name VARCHAR(255) NOT NULL,
     surname VARCHAR(255) NOT NULL,
     email VARCHAR(255) NOT NULL,
@@ -88,7 +87,6 @@ CREATE TABLE ORDERS (
     customer_id INT NOT NULL,
     restaurant_id INT NOT NULL,  
     order_date DATE NOT NULL,
-    order_hour TIME NOT NULL,
     order_status VARCHAR(50) NOT NULL,
     total DECIMAL(10, 2) NOT NULL,
     location VARCHAR(255) NOT NULL,
@@ -105,6 +103,25 @@ CREATE TABLE PAYMENTS (
     card_type VARCHAR(50) NOT NULL,
     price DECIMAL(10, 2) NOT NULL,
     FOREIGN KEY (order_id) REFERENCES ORDERS(order_id)
+);
+
+
+CREATE TABLE JOB_OFFERS(
+    job_offer_id INT PRIMARY KEY AUTO_INCREMENT, -- IDs del 11000 al 12000
+    job_id INT NOT NULL,
+    title VARCHAR(255) NOT NULL,
+    description VARCHAR(1000) NOT NULL,
+    location VARCHAR(255) NOT NULL,
+    FOREIGN KEY (job_id) REFERENCES JOBS(job_id)
+);
+
+CREATE TABLE JOB_OFFERS_APPLICANTS(
+    job_offer_id INT NOT NULL,
+    applicant_id INT NOT NULL,
+    application_date DATE NOT NULL,
+    PRIMARY KEY (job_offer_id, applicant_id),
+    FOREIGN KEY (job_offer_id) REFERENCES JOB_OFFERS(job_offer_id),
+    FOREIGN KEY (applicant_id) REFERENCES APPLICANTS(applicant_id)
 );
 
 CREATE TABLE PRODUCTS_ORDER (
