@@ -4,13 +4,15 @@ import Model.DAO.EmployeeDao;
 import Model.DAO.OrderDao;
 import Model.Entities.Employee;
 import Model.Entities.Order;
+import Model.Entities.OrderDetail;
+import Model.Entities.Payment;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.ArrayList;
 import java.util.Map;
 
-public class OrderAction implements IAction{
+public class OrderAction implements IAction {
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response, String action, Map<String, String[]> objectParams) {
 
@@ -25,18 +27,18 @@ public class OrderAction implements IAction{
                 break;
             case "ADD":
                 //http://localhost:8080/CrazyCow_Server/Controller?ACTION=ORDER.ADD&customer_id=123&restaurant_id=456&order_status=pendiente&total=29.99&location=Calle%20Principal%20123
-                strReturn=add(objectParams);
+                strReturn = add(objectParams);
                 break;
             default:
-                strReturn ="ERROR.Invalid Action";
+                strReturn = "ERROR.Invalid Action";
                 break;
         }
 
         return strReturn;
     }
 
-    public String findAll(){
-        String strReturn ="";
+    public String findAll() {
+        String strReturn = "";
         OrderDao orderDao = new OrderDao();
         Order order = new Order();
         ArrayList<Order> listOrders = orderDao.findAll(order);
@@ -51,75 +53,77 @@ public class OrderAction implements IAction{
         String strReturn = "";
 
         try {
-            // Procesar customer_id
-            if (objectParams.get("customer_id") != null && objectParams.get("customer_id").length > 0) {
-                System.out.println("Valor recibido customer_id: " + objectParams.get("customer_id")[0]);
-                newOrder.setCustomer_id(Integer.parseInt(objectParams.get("customer_id")[0]));
-            } else {
-                System.out.println("Error: El parámetro customer_id es obligatorio.");
-                return "Error: El parámetro customer_id es obligatorio.";
+            // 1. Validar parámetros obligatorios
+            if (!objectParams.containsKey("customer_id") || !objectParams.containsKey("restaurant_id")
+                    || !objectParams.containsKey("total") || !objectParams.containsKey("location")) {
+                return "ERROR: Faltan parámetros obligatorios (customer_id, restaurant_id, total, location)";
             }
 
-            // Procesar restaurant_id
-            if (objectParams.get("restaurant_id") != null && objectParams.get("restaurant_id").length > 0) {
-                System.out.println("Valor recibido restaurant_id: " + objectParams.get("restaurant_id")[0]);
-                newOrder.setRestaurant_id(Integer.parseInt(objectParams.get("restaurant_id")[0]));
-            } else {
-                System.out.println("Error: El parámetro restaurant_id es obligatorio.");
-                return "Error: El parámetro restaurant_id es obligatorio.";
-            }
+            // 2. Setear datos básicos del Order
+            newOrder.setCustomer_id(Integer.parseInt(objectParams.get("customer_id")[0]));
+            newOrder.setRestaurant_id(Integer.parseInt(objectParams.get("restaurant_id")[0]));
+            newOrder.setTotal(Double.parseDouble(objectParams.get("total")[0]));
+            newOrder.setLocation(objectParams.get("location")[0]);
 
-            // Procesar order_status (puede tener un valor por defecto si no se proporciona)
-            if (objectParams.get("order_status") != null && objectParams.get("order_status").length > 0) {
-                System.out.println("Valor recibido order_status: " + objectParams.get("order_status")[0]);
-                newOrder.setOrder_status(objectParams.get("order_status")[0]);
-            } else {
-                // Valor por defecto para el estado del pedido
-                newOrder.setOrder_status("pendiente");
-                System.out.println("Valor por defecto para order_status: pendiente");
-            }
+            // Si no se proporciona order_status, se establece "pendiente" por defecto
+            newOrder.setOrder_status(objectParams.containsKey("order_status") ?
+                    objectParams.get("order_status")[0] : "pendiente");
 
-            // Procesar total
-            if (objectParams.get("total") != null && objectParams.get("total").length > 0) {
-                System.out.println("Valor recibido total: " + objectParams.get("total")[0]);
-                try {
-                    double total = Double.parseDouble(objectParams.get("total")[0]);
-                    newOrder.setTotal(total);
-                } catch (NumberFormatException e) {
-                    System.out.println("Error: El parámetro total debe ser un número válido.");
-                    return "Error: El parámetro total debe ser un número válido.";
+            // 3. Procesar productos (OrderDetails)
+            if (objectParams.containsKey("order_details")) {
+                String[] products = objectParams.get("order_details")[0].split(",");
+
+                for (String product : products) {
+                    String[] parts = product.split(":");
+                    if (parts.length >= 2) {
+                        OrderDetail detail = new OrderDetail();
+                        detail.setProduct_id(Integer.parseInt(parts[0]));
+                        detail.setQuantity(Integer.parseInt(parts[1]));
+                        newOrder.addOrderDetail(detail);
+                    }
+                }
+                if (newOrder.getOrder_details().isEmpty()) {
+                    return "ERROR: Formato de order_details inválido. Usar format product_id:quantity,product_id:quantity";
                 }
             } else {
-                System.out.println("Error: El parámetro total es obligatorio.");
+                return "ERROR: Se requieren detalles del pedido (parámetro 'order_details')";
             }
 
-            // Procesar location
-            if (objectParams.get("location") != null && objectParams.get("location").length > 0) {
-                System.out.println("Valor recibido location: " + objectParams.get("location")[0]);
-                newOrder.setLocation(objectParams.get("location")[0]);
+            // 4. Procesar Payment
+            if (objectParams.containsKey("holder_name") && objectParams.containsKey("holder_number") &&
+                    objectParams.containsKey("cvv") && objectParams.containsKey("card_type")) {
+
+                Payment payment = new Payment(
+                        objectParams.get("holder_name")[0],
+                        objectParams.get("holder_number")[0],
+                        objectParams.get("cvv")[0],
+                        objectParams.get("card_type")[0],
+                        newOrder.getTotal()
+                );
+                newOrder.setPayment(payment);
             } else {
-                System.out.println("Error: El parámetro location es obligatorio.");
-                return "Error: El parámetro location es obligatorio.";
+                return "ERROR: Faltan datos de pago (holder_name, holder_number, cvv, card_type)";
             }
 
+            // 5. Guardar (OrderDao manejará la transacción)
             int filasAfectadas = orderDao.add(newOrder);
-
             if (filasAfectadas > 0) {
-                strReturn = "Pedido añadido correctamente. Filas afectadas: " + filasAfectadas;
-
-                // Aquí podrías añadir la lógica para insertar los detalles del pedido
-                // como mencionas en el comentario de OrderDao
-
+                strReturn = "Pedido añadido correctamente";
             } else {
-                strReturn = "No se pudo añadir el pedido";
+                strReturn = "ERROR: No se pudo insertar el pedido";
             }
 
+        } catch (NumberFormatException e) {
+            strReturn = "ERROR: Parámetros numéricos inválidos: " + e.getMessage();
         } catch (Exception e) {
-            System.out.println("Error al procesar la solicitud de añadir pedido: " + e.getMessage());
-            strReturn = "Error interno al procesar la solicitud";
+            strReturn = "ERROR interno: " + e.getMessage();
+            e.printStackTrace();
         }
-
         return strReturn;
     }
-
 }
+
+//http://localhost:8080/CrazyCow_Server/Controller?ACTION=ORDER.ADD&customer_id=13001&restaurant_id=10000&order_status=Preparation&total=29.99&location=Calle%20Principal%20123&order_details=8000:2,80
+// 01:1&holder_name=John%20Doe&holder_number=1234567890123456&cvv=123&card_type=VISA
+
+

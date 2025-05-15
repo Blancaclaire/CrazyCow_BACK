@@ -20,6 +20,7 @@ public class OrderDetailDao implements IDao{
         motorSql= new MotorSql();
     }
 
+
     @Override
     public int add(Object bean) {
         int filas =0;

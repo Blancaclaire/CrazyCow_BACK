@@ -78,6 +78,9 @@ public class JobOfferDao implements IDao {
 
                 }
             }
+            else{
+                System.out.println("El objeto no es váido o es nulo");
+            }
 
         } catch (SQLException e) {
             System.out.println("Error en findAll JobOffer: " + e.getMessage());

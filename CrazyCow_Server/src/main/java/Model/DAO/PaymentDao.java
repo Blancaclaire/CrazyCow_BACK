@@ -10,7 +10,7 @@ import java.util.ArrayList;
 
 public class PaymentDao implements IDao {
 
-    private String SQL_INSERT_PAYMENT = "INSERT INTO PAYMENTS(order_id,holder_name,holder_name,cvv,card_type,price)";
+    private String SQL_INSERT_PAYMENT = "INSERT INTO PAYMENTS(order_id,holder_name,holder_name,cvv,card_type,price) VALUES (?,?,?,?,?,?)";
 
     private IMotorSql motorSql;
 
@@ -31,10 +31,24 @@ public class PaymentDao implements IDao {
                 motorSql.connect();
 
                 PreparedStatement ps = motorSql.getConnection().prepareStatement(SQL_INSERT_PAYMENT);
+                ps.setInt(1,payment.getOrder_id());
+                ps.setString(2,payment.getHolder_name());
+                ps.setString(3,payment.getHolder_number());
+                ps.setString(4,payment.getCvv());
+                ps.setString(5,payment.getCard_type());
+                ps.setDouble(6,payment.getPrice());
+
+                filas = ps.executeUpdate();
 
             } catch (SQLException sqlException) {
                 System.out.println("Error al intentar añadir el pago" + sqlException.getMessage());
             }
+            finally {
+                motorSql.disconnect();
+            }
+        }
+        else{
+            System.out.println("ERROR. El objeto recibido no es válido o es nulo");
         }
         return filas;
     }

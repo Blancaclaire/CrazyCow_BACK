@@ -96,7 +96,7 @@ CREATE TABLE ORDERS (
 
 CREATE TABLE PAYMENTS (
     payment_id INT PRIMARY KEY AUTO_INCREMENT, -- IDs del 12000 al 13000
-    order_id INT NOT NULL,
+    order_id INT NOT NULL UNIQUE,
     holder_name VARCHAR(255) NOT NULL,
     holder_number VARCHAR(20) NOT NULL,
     cvv VARCHAR(4) NOT NULL,

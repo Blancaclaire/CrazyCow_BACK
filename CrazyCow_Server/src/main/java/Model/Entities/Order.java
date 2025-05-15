@@ -17,6 +17,7 @@ public class Order {
     private  String order_status;
     private double total;
     private String location;
+    private Payment payment;
 
     ArrayList<OrderDetail> order_details;
 
@@ -86,18 +87,23 @@ public class Order {
         this.order_details = order_details;
     }
 
-    //METODO PARA AÑADIR PRODUCTOS
-    public void addOrderDetail(OrderDetail orderDetail){
-        this.order_details.add(orderDetail);
+    public Payment getPayment() {
+        return payment;
+    }
+
+    public void setPayment(Payment payment) {
+        this.payment = payment;
     }
 
     //Constructores
 
-    public Order(){
 
+    public Order() {
+        this.order_details = new ArrayList<>(); // Inicializa la lista aquí
     }
 
-    public Order(int order_id, int customer_id, int restaurant_id, Date order_date, String order_hour, String order_status, double total, String location) {
+    public Order(int order_id, int customer_id, int restaurant_id, Date order_date,String order_status, double total, String location) {
+        this();
         this.order_id = order_id;
         this.customer_id = customer_id;
         this.restaurant_id = restaurant_id;
@@ -105,9 +111,14 @@ public class Order {
         this.order_status = order_status;
         this.total = total;
         this.location = location;
+
     }
 
     //Metodos
+
+    public void addOrderDetail(OrderDetail detail) {
+        this.order_details.add(detail);
+    }
 
     @Override
     public String toString() {

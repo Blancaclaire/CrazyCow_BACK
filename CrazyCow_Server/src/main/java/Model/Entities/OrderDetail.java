@@ -48,6 +48,12 @@ public class OrderDetail {
         this.quantity = quantity;
     }
 
+    public OrderDetail(int product_id, int quantity) {
+
+        this.product_id = product_id;
+        this.quantity = quantity;
+    }
+
 
     //Metodos
 

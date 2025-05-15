@@ -82,6 +82,13 @@ public class Payment {
         this.card_type = card_type;
         this.price = price;
     }
+    public Payment(String holder_name, String holder_number, String cvv, String card_type, double price) {
+        this.holder_name = holder_name;
+        this.holder_number = holder_number;
+        this.cvv = cvv;
+        this.card_type = card_type;
+        this.price = price;
+    }
 
     @Override
     public String toString() {
