@@ -15,7 +15,7 @@ public class Applicant {
     private String phone_number;
     private String address;
     private String resume;
-    private Date aplication_date;
+
 
 
     //Getter y Setter
@@ -76,13 +76,7 @@ public class Applicant {
         this.resume = resume;
     }
 
-    public Date getAplication_date() {
-        return aplication_date;
-    }
 
-    public void setAplication_date(Date aplication_date) {
-        this.aplication_date = aplication_date;
-    }
 
 
     //Constructores
@@ -91,7 +85,7 @@ public class Applicant {
 
     }
 
-    public Applicant(int applicant_id, String name, String surname, String email, String phone_number, String address, String resume, Date aplication_date) {
+    public Applicant(int applicant_id, String name, String surname, String email, String phone_number, String address, String resume) {
         this.applicant_id = applicant_id;
         this.name = name;
         this.surname = surname;
@@ -99,7 +93,7 @@ public class Applicant {
         this.phone_number = phone_number;
         this.address = address;
         this.resume = resume;
-        this.aplication_date = aplication_date;
+
     }
 
     //metodos
@@ -115,7 +109,6 @@ public class Applicant {
                 ", phone_number='" + phone_number + '\'' +
                 ", address='" + address + '\'' +
                 ", resume='" + resume + '\'' +
-                ", aplication_date=" + aplication_date +
                 '}';
     }
 

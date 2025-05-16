@@ -5,13 +5,14 @@ import Model.MotorMySql.IMotorSql;
 import Model.MotorMySql.MotorSql;
 
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
 public class ApplicantDao implements IDao {
 
-    private final String SQL_ADD_APPLICANT = "INSERT INTO APPLICANTS (name, surname, email, phone_number, address, resume, aplication_date) VALUES (?,?,?,?,?,?,CURRENT_TIMESTAMP)";
-
+    private final String SQL_ADD_APPLICANT = "INSERT INTO APPLICANTS (name, surname, email, phone_number, address, resume) VALUES (?,?,?,?,?,?)";
+    private final String SQL_FIND_ALL = "SELECT * FROM APPLICANTS WHERE 1=1";
     private IMotorSql motorSql;
 
     public ApplicantDao() {
@@ -64,6 +65,39 @@ public class ApplicantDao implements IDao {
 
     @Override
     public ArrayList findAll(Object bean) {
-        return null;
+
+        ArrayList lisApplicants = new ArrayList<>();
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+
+        try{
+            motorSql.connect();
+
+            ps = motorSql.getConnection().prepareStatement(SQL_FIND_ALL);
+
+            rs = ps.executeQuery();
+
+            while(rs.next()){
+                Applicant applicant = new Applicant(
+                        rs.getInt("applicant_id"),
+                        rs.getString("name"),
+                        rs.getString("surname"),
+                        rs.getString("email"),
+                        rs.getString("phone_number"),
+                        rs.getString("address"),
+                        rs.getString("resume")
+
+                );
+
+                lisApplicants.add(applicant);
+            }
+
+        }catch (SQLException sqlException){
+            System.out.println("ERROR en findAll Applicants" + sqlException.getMessage());
+        }
+        finally {
+            motorSql.disconnect();
+        }
+        return lisApplicants;
     }
 }

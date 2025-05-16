@@ -48,7 +48,6 @@ CREATE TABLE APPLICANTS (
     phone_number VARCHAR(20) NOT NULL,
     address VARCHAR(255) NOT NULL,
     resume VARCHAR(255) NOT NULL, 
-    aplication_date DATE NOT NULL,
     FOREIGN KEY (job_id) REFERENCES JOBS(job_id)
 );
 

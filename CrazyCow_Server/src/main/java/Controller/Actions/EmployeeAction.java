@@ -38,12 +38,12 @@ public class EmployeeAction implements  IAction{
     }
 
     public String findAll(){
-        String strReturn ="";
+        String strReturn = "";
         EmployeeDao employeeDao = new EmployeeDao();
         Employee employee = new Employee();
         ArrayList<Employee> listEmployees = employeeDao.findAll(employee);
-
-        return Employee.toArrayJson(listEmployees);
+        strReturn = Employee.toArrayJson(listEmployees);
+        return strReturn;
     }
 
     public String authenticate(Map<String, String[]>objectParams){

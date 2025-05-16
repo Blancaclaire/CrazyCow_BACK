@@ -5,6 +5,7 @@ import Model.Entities.Applicant;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.util.ArrayList;
 import java.util.Map;
 
 public class ApplicantAction implements IAction{
@@ -18,6 +19,11 @@ public class ApplicantAction implements IAction{
             case "ADD":
                 //http://localhost:8080/CrazyCow_Server/Controller?ACTION=APPLICANT.ADD&name=Emma&surname&Lopez&email=emma.lopez@example.com&phone_number=987654321&address=Avenida%20Libertad%2045&resume=emma_lopez_cv.pdf
                 strReturn=add(objectParams);
+                break;
+
+            case "FIND_ALL":
+                //http://localhost:8080/CrazyCow_Server/Controller?ACTION=APPLICANT.FIND_ALL
+                strReturn =findAll();
                 break;
             default:
                 strReturn ="ERROR.Invalid Action";
@@ -113,5 +119,15 @@ public class ApplicantAction implements IAction{
         }
 
         return strReturn;
+    }
+
+
+    public String findAll(){
+        String strReturn = null;
+        ApplicantDao applicantDao = new ApplicantDao();
+        Applicant applicant = new Applicant();
+        ArrayList<Applicant> listApplicants = applicantDao.findAll(applicant);
+        strReturn = Applicant.toArrayJson(listApplicants);
+        return  strReturn;
     }
 }
