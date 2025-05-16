@@ -10,7 +10,7 @@ import java.util.ArrayList;
 
 public class PaymentDao implements IDao {
 
-    private String SQL_INSERT_PAYMENT = "INSERT INTO PAYMENTS(order_id,holder_name,holder_name,cvv,card_type,price) VALUES (?,?,?,?,?,?)";
+    private String SQL_INSERT_PAYMENT = "INSERT INTO PAYMENTS(order_id,holder_name,holder_number,cvv,card_type,price) VALUES (?,?,?,?,?,?)";
 
     private IMotorSql motorSql;
 
@@ -41,7 +41,7 @@ public class PaymentDao implements IDao {
                 filas = ps.executeUpdate();
 
             } catch (SQLException sqlException) {
-                System.out.println("Error al intentar añadir el pago" + sqlException.getMessage());
+                System.out.println("Error al intentar añadir el pago " + sqlException.getMessage());
             }
             finally {
                 motorSql.disconnect();

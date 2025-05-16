@@ -22,11 +22,11 @@ public class OrderAction implements IAction {
         switch (action) {
 
             case "FIND_ALL":
-                //http://localhost:8080/CrazyCow_Server/Controller?ACTION=ORDER.FIND_ALL
-                strReturn = findAll();
+                //http://localhost:8080/CrazyCow_Server/Controller?ACTION=ORDER.FIND_ALL&restaurant_id=10000
+                strReturn = findAll(objectParams);
                 break;
             case "ADD":
-                //http://localhost:8080/CrazyCow_Server/Controller?ACTION=ORDER.ADD&customer_id=123&restaurant_id=456&order_status=pendiente&total=29.99&location=Calle%20Principal%20123
+                ////http://localhost:8080/CrazyCow_Server/Controller?ACTION=ORDER.ADD&customer_id=13001&restaurant_id=10000&order_status=Preparation&total=50.99&location=Calle%20Principal%20123&order_details=8000:2,8001:1&holder_name=Clara%20Doe&holder_number=1234567890123456&cvv=123&card_type=VISA
                 strReturn = add(objectParams);
                 break;
             default:
@@ -37,10 +37,15 @@ public class OrderAction implements IAction {
         return strReturn;
     }
 
-    public String findAll() {
+    public String findAll(Map<String, String[]>objectParams) {
         String strReturn = "";
         OrderDao orderDao = new OrderDao();
         Order order = new Order();
+
+        if (objectParams.get("restaurant_id") != null && objectParams.get("restaurant_id").length > 0) {
+            order.setRestaurant_id(Integer.parseInt(objectParams.get("restaurant_id")[0]));
+        }
+
         ArrayList<Order> listOrders = orderDao.findAll(order);
 
         return Order.toArrayJson(listOrders);
@@ -123,7 +128,6 @@ public class OrderAction implements IAction {
     }
 }
 
-//http://localhost:8080/CrazyCow_Server/Controller?ACTION=ORDER.ADD&customer_id=13001&restaurant_id=10000&order_status=Preparation&total=29.99&location=Calle%20Principal%20123&order_details=8000:2,80
-// 01:1&holder_name=John%20Doe&holder_number=1234567890123456&cvv=123&card_type=VISA
+
 
 

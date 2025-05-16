@@ -718,3 +718,438 @@
  java.base/java.lang.Thread.run(Thread.java:1575)
 16-May-2025 16:14:56.921 INFO [Thread-1] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8080"]
 16-May-2025 16:14:56.935 INFO [Thread-1] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8080"]
+16-May-2025 16:15:00.404 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Nombre de la versión del servidor: Apache Tomcat/9.0.102
+16-May-2025 16:15:00.409 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:                      Mar 3 2025 19:33:14 UTC
+16-May-2025 16:15:00.410 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Número de versión de servidor:     9.0.102.0
+16-May-2025 16:15:00.410 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:                           Windows 11
+16-May-2025 16:15:00.410 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Versión de Systema Operativo:      10.0
+16-May-2025 16:15:00.410 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Arquitectura:                      amd64
+16-May-2025 16:15:00.411 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:                         C:\Users\clara\.jdks\openjdk-23.0.1
+16-May-2025 16:15:00.411 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:                       23.0.1+11-39
+16-May-2025 16:15:00.411 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Vededor JVM:                       Oracle Corporation
+16-May-2025 16:15:00.411 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:                     C:\Users\clara\Desktop\CrazyCow_BACK\tomcat
+16-May-2025 16:15:00.412 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:                     C:\Users\clara\Documents\DAW\PROGRAMACION\3TRIMESTRE\tomcat
+16-May-2025 16:15:00.427 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             --add-opens=java.base/java.lang=ALL-UNNAMED
+16-May-2025 16:15:00.428 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             --add-opens=java.base/java.io=ALL-UNNAMED
+16-May-2025 16:15:00.428 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             --add-opens=java.base/java.util=ALL-UNNAMED
+16-May-2025 16:15:00.428 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+16-May-2025 16:15:00.429 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+16-May-2025 16:15:00.429 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Dcatalina.home=C:\Users\clara\Documents\DAW\PROGRAMACION\3TRIMESTRE\tomcat
+16-May-2025 16:15:00.429 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Dcatalina.base=C:\Users\clara\Desktop\CrazyCow_BACK\tomcat
+16-May-2025 16:15:00.430 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Djava.io.tmpdir=C:\Users\clara\Desktop\CrazyCow_BACK\tomcat\temp
+16-May-2025 16:15:00.431 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Djava.util.logging.config.file=C:\Users\clara\Desktop\CrazyCow_BACK\tomcat\conf\logging.properties
+16-May-2025 16:15:00.431 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+16-May-2025 16:15:00.431 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -javaagent:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2024.2.3\lib\idea_rt.jar=60255:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2024.2.3\bin
+16-May-2025 16:15:00.432 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Dfile.encoding=UTF-8
+16-May-2025 16:15:00.432 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Dsun.stdout.encoding=UTF-8
+16-May-2025 16:15:00.433 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Dsun.stderr.encoding=UTF-8
+16-May-2025 16:15:00.438 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent Cargada la biblioteca nativa APR de Apache Tomcat [1.3.1] con la versión APR [1.7.4].
+16-May-2025 16:15:00.438 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent Capacidades APR: IPv6 [true], enviar fichero [true], aceptar filtros [false], aleatorio [true], UDS [true].
+16-May-2025 16:15:00.438 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+16-May-2025 16:15:00.450 INFO [main] org.apache.catalina.core.AprLifecycleListener.initializeSSL OpenSSL inicializado correctamente [OpenSSL 3.0.14 4 Jun 2024]
+16-May-2025 16:15:01.070 INFO [main] org.apache.coyote.AbstractProtocol.init Inicializando el manejador de protocolo ["http-nio-8080"]
+
+16-May-2025 16:15:01.105 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [1067] milliseconds
+16-May-2025 16:15:01.204 INFO [main] org.apache.catalina.core.StandardService.startInternal Arrancando servicio [Catalina]
+16-May-2025 16:15:01.205 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/9.0.102]
+16-May-2025 16:15:01.227 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Desplieque del descriptor de configuración [C:\Users\clara\Desktop\CrazyCow_BACK\tomcat\conf\Catalina\localhost\CrazyCow_Server.xml]
+16-May-2025 16:15:02.380 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars Al menos un JAR, que se ha explorado buscando TLDs, aún no contenía TLDs. Activar historial de depuración para este historiador para una completa lista de los JARs que fueron explorados y de los que nos se halló TLDs. Saltarse JARs no necesarios durante la exploración puede dar lugar a una mejora de tiempo significativa en el arranque y compilación de JSP .
+16-May-2025 16:15:02.442 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [C:\Users\clara\Desktop\CrazyCow_BACK\tomcat\conf\Catalina\localhost\CrazyCow_Server.xml] has finished in [1.211] ms
+16-May-2025 16:15:02.443 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Desplegando el directorio [C:\Users\clara\Desktop\CrazyCow_BACK\tomcat\webapps\docs] de la aplicación web
+16-May-2025 16:15:02.484 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\clara\Desktop\CrazyCow_BACK\tomcat\webapps\docs] has finished in [41] ms
+16-May-2025 16:15:02.485 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Desplegando el directorio [C:\Users\clara\Desktop\CrazyCow_BACK\tomcat\webapps\examples] de la aplicación web
+16-May-2025 16:15:02.935 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\clara\Desktop\CrazyCow_BACK\tomcat\webapps\examples] has finished in [451] ms
+16-May-2025 16:15:02.935 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Desplegando el directorio [C:\Users\clara\Desktop\CrazyCow_BACK\tomcat\webapps\host-manager] de la aplicación web
+16-May-2025 16:15:02.981 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\clara\Desktop\CrazyCow_BACK\tomcat\webapps\host-manager] has finished in [46] ms
+16-May-2025 16:15:02.983 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Desplegando el directorio [C:\Users\clara\Desktop\CrazyCow_BACK\tomcat\webapps\manager] de la aplicación web
+16-May-2025 16:15:03.022 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\clara\Desktop\CrazyCow_BACK\tomcat\webapps\manager] has finished in [39] ms
+16-May-2025 16:15:03.022 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Desplegando el directorio [C:\Users\clara\Desktop\CrazyCow_BACK\tomcat\webapps\ROOT] de la aplicación web
+16-May-2025 16:15:03.057 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\clara\Desktop\CrazyCow_BACK\tomcat\webapps\ROOT] has finished in [35] ms
+16-May-2025 16:15:03.068 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+16-May-2025 16:15:03.103 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [1996] milliseconds
+16-May-2025 16:36:01.675 INFO [Thread-1] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8080"]
+16-May-2025 16:36:01.683 INFO [Thread-1] org.apache.catalina.core.StandardService.stopInternal Parando servicio [Catalina]
+16-May-2025 16:36:01.713 WARNING [Thread-1] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesJdbc La aplicación web [CrazyCow_Server] registró el conductor JDBC [com.mysql.cj.jdbc.Driver] pero falló al anular el registro mientras la aplicación web estaba parada. Para prevenir un fallo de memoria, se ha anulado el registro del conductor JDBC por la fuerza.
+16-May-2025 16:36:01.714 WARNING [Thread-1] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [CrazyCow_Server] appears to have started a thread named [mysql-cj-abandoned-connection-cleanup] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base/jdk.internal.misc.Unsafe.park(Native Method)
+ java.base/java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:269)
+ java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1852)
+ java.base/java.lang.ref.ReferenceQueue.await(ReferenceQueue.java:79)
+ java.base/java.lang.ref.ReferenceQueue.remove0(ReferenceQueue.java:151)
+ java.base/java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:229)
+ com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:84)
+ java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+ java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+ java.base/java.lang.Thread.run(Thread.java:1575)
+16-May-2025 16:36:01.718 INFO [Thread-1] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8080"]
+16-May-2025 16:36:01.722 INFO [Thread-1] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8080"]
+16-May-2025 16:36:01.748 INFO [mysql-cj-abandoned-connection-cleanup] org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading Acceso ilegal: esta instancia de aplicación web ya ha sido parada.  Could not load [].  La eventual traza de pila que sigue ha sido motivada por un error lanzado con motivos de depuración así como para intentar terminar el hilo que motivó el acceso ilegal y no tiene impacto funcional.
+	java.lang.IllegalStateException: Acceso ilegal: esta instancia de aplicación web ya ha sido parada.  Could not load [].  La eventual traza de pila que sigue ha sido motivada por un error lanzado con motivos de depuración así como para intentar terminar el hilo que motivó el acceso ilegal y no tiene impacto funcional.
+		at org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading(WebappClassLoaderBase.java:1373)
+		at org.apache.catalina.loader.WebappClassLoaderBase.getResource(WebappClassLoaderBase.java:996)
+		at com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.checkThreadContextClassLoader(AbandonedConnectionCleanupThread.java:116)
+		at com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:83)
+		at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+		at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+		at java.base/java.lang.Thread.run(Thread.java:1575)
+16-May-2025 16:36:06.207 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Nombre de la versión del servidor: Apache Tomcat/9.0.102
+16-May-2025 16:36:06.213 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:                      Mar 3 2025 19:33:14 UTC
+16-May-2025 16:36:06.214 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Número de versión de servidor:     9.0.102.0
+16-May-2025 16:36:06.214 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:                           Windows 11
+16-May-2025 16:36:06.215 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Versión de Systema Operativo:      10.0
+16-May-2025 16:36:06.215 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Arquitectura:                      amd64
+16-May-2025 16:36:06.215 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:                         C:\Users\clara\.jdks\openjdk-23.0.1
+16-May-2025 16:36:06.216 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:                       23.0.1+11-39
+16-May-2025 16:36:06.216 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Vededor JVM:                       Oracle Corporation
+16-May-2025 16:36:06.216 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:                     C:\Users\clara\Desktop\CrazyCow_BACK\tomcat
+16-May-2025 16:36:06.217 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:                     C:\Users\clara\Documents\DAW\PROGRAMACION\3TRIMESTRE\tomcat
+16-May-2025 16:36:06.237 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             --add-opens=java.base/java.lang=ALL-UNNAMED
+16-May-2025 16:36:06.239 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             --add-opens=java.base/java.io=ALL-UNNAMED
+16-May-2025 16:36:06.239 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             --add-opens=java.base/java.util=ALL-UNNAMED
+16-May-2025 16:36:06.240 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+16-May-2025 16:36:06.240 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+16-May-2025 16:36:06.241 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Dcatalina.home=C:\Users\clara\Documents\DAW\PROGRAMACION\3TRIMESTRE\tomcat
+16-May-2025 16:36:06.242 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Dcatalina.base=C:\Users\clara\Desktop\CrazyCow_BACK\tomcat
+16-May-2025 16:36:06.242 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Djava.io.tmpdir=C:\Users\clara\Desktop\CrazyCow_BACK\tomcat\temp
+16-May-2025 16:36:06.243 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Djava.util.logging.config.file=C:\Users\clara\Desktop\CrazyCow_BACK\tomcat\conf\logging.properties
+16-May-2025 16:36:06.244 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+16-May-2025 16:36:06.244 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -javaagent:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2024.2.3\lib\idea_rt.jar=60319:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2024.2.3\bin
+16-May-2025 16:36:06.245 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Dfile.encoding=UTF-8
+16-May-2025 16:36:06.245 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Dsun.stdout.encoding=UTF-8
+16-May-2025 16:36:06.246 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Dsun.stderr.encoding=UTF-8
+16-May-2025 16:36:06.255 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent Cargada la biblioteca nativa APR de Apache Tomcat [1.3.1] con la versión APR [1.7.4].
+16-May-2025 16:36:06.255 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent Capacidades APR: IPv6 [true], enviar fichero [true], aceptar filtros [false], aleatorio [true], UDS [true].
+16-May-2025 16:36:06.255 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+16-May-2025 16:36:06.271 INFO [main] org.apache.catalina.core.AprLifecycleListener.initializeSSL OpenSSL inicializado correctamente [OpenSSL 3.0.14 4 Jun 2024]
+16-May-2025 16:36:06.946 INFO [main] org.apache.coyote.AbstractProtocol.init Inicializando el manejador de protocolo ["http-nio-8080"]
+
+16-May-2025 16:36:06.995 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [1359] milliseconds
+16-May-2025 16:36:07.084 INFO [main] org.apache.catalina.core.StandardService.startInternal Arrancando servicio [Catalina]
+16-May-2025 16:36:07.085 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/9.0.102]
+16-May-2025 16:36:07.102 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Desplieque del descriptor de configuración [C:\Users\clara\Desktop\CrazyCow_BACK\tomcat\conf\Catalina\localhost\CrazyCow_Server.xml]
+16-May-2025 16:36:08.350 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars Al menos un JAR, que se ha explorado buscando TLDs, aún no contenía TLDs. Activar historial de depuración para este historiador para una completa lista de los JARs que fueron explorados y de los que nos se halló TLDs. Saltarse JARs no necesarios durante la exploración puede dar lugar a una mejora de tiempo significativa en el arranque y compilación de JSP .
+16-May-2025 16:36:08.424 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [C:\Users\clara\Desktop\CrazyCow_BACK\tomcat\conf\Catalina\localhost\CrazyCow_Server.xml] has finished in [1.317] ms
+16-May-2025 16:36:08.426 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Desplegando el directorio [C:\Users\clara\Desktop\CrazyCow_BACK\tomcat\webapps\docs] de la aplicación web
+16-May-2025 16:36:08.478 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\clara\Desktop\CrazyCow_BACK\tomcat\webapps\docs] has finished in [53] ms
+16-May-2025 16:36:08.479 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Desplegando el directorio [C:\Users\clara\Desktop\CrazyCow_BACK\tomcat\webapps\examples] de la aplicación web
+16-May-2025 16:36:08.958 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\clara\Desktop\CrazyCow_BACK\tomcat\webapps\examples] has finished in [479] ms
+16-May-2025 16:36:08.958 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Desplegando el directorio [C:\Users\clara\Desktop\CrazyCow_BACK\tomcat\webapps\host-manager] de la aplicación web
+16-May-2025 16:36:09.006 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\clara\Desktop\CrazyCow_BACK\tomcat\webapps\host-manager] has finished in [48] ms
+16-May-2025 16:36:09.007 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Desplegando el directorio [C:\Users\clara\Desktop\CrazyCow_BACK\tomcat\webapps\manager] de la aplicación web
+16-May-2025 16:36:09.052 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\clara\Desktop\CrazyCow_BACK\tomcat\webapps\manager] has finished in [45] ms
+16-May-2025 16:36:09.052 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Desplegando el directorio [C:\Users\clara\Desktop\CrazyCow_BACK\tomcat\webapps\ROOT] de la aplicación web
+16-May-2025 16:36:09.085 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\clara\Desktop\CrazyCow_BACK\tomcat\webapps\ROOT] has finished in [33] ms
+16-May-2025 16:36:09.091 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+16-May-2025 16:36:09.118 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [2119] milliseconds
+16-May-2025 16:43:48.512 INFO [Thread-1] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8080"]
+16-May-2025 16:43:48.522 INFO [Thread-1] org.apache.catalina.core.StandardService.stopInternal Parando servicio [Catalina]
+16-May-2025 16:43:48.552 WARNING [Thread-1] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesJdbc La aplicación web [CrazyCow_Server] registró el conductor JDBC [com.mysql.cj.jdbc.Driver] pero falló al anular el registro mientras la aplicación web estaba parada. Para prevenir un fallo de memoria, se ha anulado el registro del conductor JDBC por la fuerza.
+16-May-2025 16:43:48.552 WARNING [Thread-1] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [CrazyCow_Server] appears to have started a thread named [mysql-cj-abandoned-connection-cleanup] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base/jdk.internal.misc.Unsafe.park(Native Method)
+ java.base/java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:269)
+ java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1852)
+ java.base/java.lang.ref.ReferenceQueue.await(ReferenceQueue.java:79)
+ java.base/java.lang.ref.ReferenceQueue.remove0(ReferenceQueue.java:151)
+ java.base/java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:229)
+ com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:84)
+ java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+ java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+ java.base/java.lang.Thread.run(Thread.java:1575)
+16-May-2025 16:43:48.557 INFO [Thread-1] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8080"]
+16-May-2025 16:43:48.566 INFO [Thread-1] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8080"]
+16-May-2025 16:43:48.592 INFO [mysql-cj-abandoned-connection-cleanup] org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading Acceso ilegal: esta instancia de aplicación web ya ha sido parada.  Could not load [].  La eventual traza de pila que sigue ha sido motivada por un error lanzado con motivos de depuración así como para intentar terminar el hilo que motivó el acceso ilegal y no tiene impacto funcional.
+	java.lang.IllegalStateException: Acceso ilegal: esta instancia de aplicación web ya ha sido parada.  Could not load [].  La eventual traza de pila que sigue ha sido motivada por un error lanzado con motivos de depuración así como para intentar terminar el hilo que motivó el acceso ilegal y no tiene impacto funcional.
+		at org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading(WebappClassLoaderBase.java:1373)
+		at org.apache.catalina.loader.WebappClassLoaderBase.getResource(WebappClassLoaderBase.java:996)
+		at com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.checkThreadContextClassLoader(AbandonedConnectionCleanupThread.java:116)
+		at com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:83)
+		at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+		at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+		at java.base/java.lang.Thread.run(Thread.java:1575)
+16-May-2025 16:43:52.229 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Nombre de la versión del servidor: Apache Tomcat/9.0.102
+16-May-2025 16:43:52.234 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:                      Mar 3 2025 19:33:14 UTC
+16-May-2025 16:43:52.236 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Número de versión de servidor:     9.0.102.0
+16-May-2025 16:43:52.236 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:                           Windows 11
+16-May-2025 16:43:52.236 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Versión de Systema Operativo:      10.0
+16-May-2025 16:43:52.237 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Arquitectura:                      amd64
+16-May-2025 16:43:52.237 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:                         C:\Users\clara\.jdks\openjdk-23.0.1
+16-May-2025 16:43:52.237 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:                       23.0.1+11-39
+16-May-2025 16:43:52.237 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Vededor JVM:                       Oracle Corporation
+16-May-2025 16:43:52.238 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:                     C:\Users\clara\Desktop\CrazyCow_BACK\tomcat
+16-May-2025 16:43:52.238 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:                     C:\Users\clara\Documents\DAW\PROGRAMACION\3TRIMESTRE\tomcat
+16-May-2025 16:43:52.250 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             --add-opens=java.base/java.lang=ALL-UNNAMED
+16-May-2025 16:43:52.250 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             --add-opens=java.base/java.io=ALL-UNNAMED
+16-May-2025 16:43:52.251 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             --add-opens=java.base/java.util=ALL-UNNAMED
+16-May-2025 16:43:52.251 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+16-May-2025 16:43:52.251 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+16-May-2025 16:43:52.251 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Dcatalina.home=C:\Users\clara\Documents\DAW\PROGRAMACION\3TRIMESTRE\tomcat
+16-May-2025 16:43:52.252 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Dcatalina.base=C:\Users\clara\Desktop\CrazyCow_BACK\tomcat
+16-May-2025 16:43:52.252 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Djava.io.tmpdir=C:\Users\clara\Desktop\CrazyCow_BACK\tomcat\temp
+16-May-2025 16:43:52.252 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Djava.util.logging.config.file=C:\Users\clara\Desktop\CrazyCow_BACK\tomcat\conf\logging.properties
+16-May-2025 16:43:52.252 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+16-May-2025 16:43:52.252 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -javaagent:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2024.2.3\lib\idea_rt.jar=60352:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2024.2.3\bin
+16-May-2025 16:43:52.253 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Dfile.encoding=UTF-8
+16-May-2025 16:43:52.253 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Dsun.stdout.encoding=UTF-8
+16-May-2025 16:43:52.253 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Dsun.stderr.encoding=UTF-8
+16-May-2025 16:43:52.258 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent Cargada la biblioteca nativa APR de Apache Tomcat [1.3.1] con la versión APR [1.7.4].
+16-May-2025 16:43:52.258 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent Capacidades APR: IPv6 [true], enviar fichero [true], aceptar filtros [false], aleatorio [true], UDS [true].
+16-May-2025 16:43:52.258 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+16-May-2025 16:43:52.268 INFO [main] org.apache.catalina.core.AprLifecycleListener.initializeSSL OpenSSL inicializado correctamente [OpenSSL 3.0.14 4 Jun 2024]
+16-May-2025 16:43:52.930 INFO [main] org.apache.coyote.AbstractProtocol.init Inicializando el manejador de protocolo ["http-nio-8080"]
+
+16-May-2025 16:43:52.958 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [1117] milliseconds
+16-May-2025 16:43:53.044 INFO [main] org.apache.catalina.core.StandardService.startInternal Arrancando servicio [Catalina]
+16-May-2025 16:43:53.044 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/9.0.102]
+16-May-2025 16:43:53.066 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Desplieque del descriptor de configuración [C:\Users\clara\Desktop\CrazyCow_BACK\tomcat\conf\Catalina\localhost\CrazyCow_Server.xml]
+16-May-2025 16:43:54.119 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars Al menos un JAR, que se ha explorado buscando TLDs, aún no contenía TLDs. Activar historial de depuración para este historiador para una completa lista de los JARs que fueron explorados y de los que nos se halló TLDs. Saltarse JARs no necesarios durante la exploración puede dar lugar a una mejora de tiempo significativa en el arranque y compilación de JSP .
+16-May-2025 16:43:54.197 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [C:\Users\clara\Desktop\CrazyCow_BACK\tomcat\conf\Catalina\localhost\CrazyCow_Server.xml] has finished in [1.126] ms
+16-May-2025 16:43:54.199 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Desplegando el directorio [C:\Users\clara\Desktop\CrazyCow_BACK\tomcat\webapps\docs] de la aplicación web
+16-May-2025 16:43:54.250 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\clara\Desktop\CrazyCow_BACK\tomcat\webapps\docs] has finished in [50] ms
+16-May-2025 16:43:54.250 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Desplegando el directorio [C:\Users\clara\Desktop\CrazyCow_BACK\tomcat\webapps\examples] de la aplicación web
+16-May-2025 16:43:54.721 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\clara\Desktop\CrazyCow_BACK\tomcat\webapps\examples] has finished in [471] ms
+16-May-2025 16:43:54.721 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Desplegando el directorio [C:\Users\clara\Desktop\CrazyCow_BACK\tomcat\webapps\host-manager] de la aplicación web
+16-May-2025 16:43:54.770 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\clara\Desktop\CrazyCow_BACK\tomcat\webapps\host-manager] has finished in [49] ms
+16-May-2025 16:43:54.770 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Desplegando el directorio [C:\Users\clara\Desktop\CrazyCow_BACK\tomcat\webapps\manager] de la aplicación web
+16-May-2025 16:43:54.811 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\clara\Desktop\CrazyCow_BACK\tomcat\webapps\manager] has finished in [41] ms
+16-May-2025 16:43:54.811 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Desplegando el directorio [C:\Users\clara\Desktop\CrazyCow_BACK\tomcat\webapps\ROOT] de la aplicación web
+16-May-2025 16:43:54.844 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\clara\Desktop\CrazyCow_BACK\tomcat\webapps\ROOT] has finished in [32] ms
+16-May-2025 16:43:54.855 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+16-May-2025 16:43:54.893 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [1932] milliseconds
+16-May-2025 17:31:15.908 INFO [Thread-1] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8080"]
+16-May-2025 17:31:15.920 INFO [Thread-1] org.apache.catalina.core.StandardService.stopInternal Parando servicio [Catalina]
+16-May-2025 17:31:15.970 WARNING [Thread-1] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesJdbc La aplicación web [CrazyCow_Server] registró el conductor JDBC [com.mysql.cj.jdbc.Driver] pero falló al anular el registro mientras la aplicación web estaba parada. Para prevenir un fallo de memoria, se ha anulado el registro del conductor JDBC por la fuerza.
+16-May-2025 17:31:15.971 WARNING [Thread-1] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [CrazyCow_Server] appears to have started a thread named [mysql-cj-abandoned-connection-cleanup] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base/jdk.internal.misc.Unsafe.park(Native Method)
+ java.base/java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:269)
+ java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1852)
+ java.base/java.lang.ref.ReferenceQueue.await(ReferenceQueue.java:79)
+ java.base/java.lang.ref.ReferenceQueue.remove0(ReferenceQueue.java:151)
+ java.base/java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:229)
+ com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:84)
+ java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+ java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+ java.base/java.lang.Thread.run(Thread.java:1575)
+16-May-2025 17:31:15.977 INFO [Thread-1] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8080"]
+16-May-2025 17:31:15.987 INFO [Thread-1] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8080"]
+16-May-2025 17:31:16.035 INFO [mysql-cj-abandoned-connection-cleanup] org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading Acceso ilegal: esta instancia de aplicación web ya ha sido parada.  Could not load [].  La eventual traza de pila que sigue ha sido motivada por un error lanzado con motivos de depuración así como para intentar terminar el hilo que motivó el acceso ilegal y no tiene impacto funcional.
+	java.lang.IllegalStateException: Acceso ilegal: esta instancia de aplicación web ya ha sido parada.  Could not load [].  La eventual traza de pila que sigue ha sido motivada por un error lanzado con motivos de depuración así como para intentar terminar el hilo que motivó el acceso ilegal y no tiene impacto funcional.
+		at org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading(WebappClassLoaderBase.java:1373)
+		at org.apache.catalina.loader.WebappClassLoaderBase.getResource(WebappClassLoaderBase.java:996)
+		at com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.checkThreadContextClassLoader(AbandonedConnectionCleanupThread.java:116)
+		at com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:83)
+		at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+		at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+		at java.base/java.lang.Thread.run(Thread.java:1575)
+16-May-2025 17:31:20.312 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Nombre de la versión del servidor: Apache Tomcat/9.0.102
+16-May-2025 17:31:20.319 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:                      Mar 3 2025 19:33:14 UTC
+16-May-2025 17:31:20.320 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Número de versión de servidor:     9.0.102.0
+16-May-2025 17:31:20.321 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:                           Windows 11
+16-May-2025 17:31:20.321 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Versión de Systema Operativo:      10.0
+16-May-2025 17:31:20.321 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Arquitectura:                      amd64
+16-May-2025 17:31:20.321 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:                         C:\Users\clara\.jdks\openjdk-23.0.1
+16-May-2025 17:31:20.321 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:                       23.0.1+11-39
+16-May-2025 17:31:20.322 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Vededor JVM:                       Oracle Corporation
+16-May-2025 17:31:20.322 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:                     C:\Users\clara\Desktop\CrazyCow_BACK\tomcat
+16-May-2025 17:31:20.322 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:                     C:\Users\clara\Documents\DAW\PROGRAMACION\3TRIMESTRE\tomcat
+16-May-2025 17:31:20.342 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             --add-opens=java.base/java.lang=ALL-UNNAMED
+16-May-2025 17:31:20.342 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             --add-opens=java.base/java.io=ALL-UNNAMED
+16-May-2025 17:31:20.342 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             --add-opens=java.base/java.util=ALL-UNNAMED
+16-May-2025 17:31:20.342 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+16-May-2025 17:31:20.343 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+16-May-2025 17:31:20.343 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Dcatalina.home=C:\Users\clara\Documents\DAW\PROGRAMACION\3TRIMESTRE\tomcat
+16-May-2025 17:31:20.343 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Dcatalina.base=C:\Users\clara\Desktop\CrazyCow_BACK\tomcat
+16-May-2025 17:31:20.343 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Djava.io.tmpdir=C:\Users\clara\Desktop\CrazyCow_BACK\tomcat\temp
+16-May-2025 17:31:20.344 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Djava.util.logging.config.file=C:\Users\clara\Desktop\CrazyCow_BACK\tomcat\conf\logging.properties
+16-May-2025 17:31:20.344 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+16-May-2025 17:31:20.344 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -javaagent:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2024.2.3\lib\idea_rt.jar=60541:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2024.2.3\bin
+16-May-2025 17:31:20.344 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Dfile.encoding=UTF-8
+16-May-2025 17:31:20.344 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Dsun.stdout.encoding=UTF-8
+16-May-2025 17:31:20.345 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Dsun.stderr.encoding=UTF-8
+16-May-2025 17:31:20.351 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent Cargada la biblioteca nativa APR de Apache Tomcat [1.3.1] con la versión APR [1.7.4].
+16-May-2025 17:31:20.352 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent Capacidades APR: IPv6 [true], enviar fichero [true], aceptar filtros [false], aleatorio [true], UDS [true].
+16-May-2025 17:31:20.352 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+16-May-2025 17:31:20.363 INFO [main] org.apache.catalina.core.AprLifecycleListener.initializeSSL OpenSSL inicializado correctamente [OpenSSL 3.0.14 4 Jun 2024]
+16-May-2025 17:31:21.059 INFO [main] org.apache.coyote.AbstractProtocol.init Inicializando el manejador de protocolo ["http-nio-8080"]
+
+16-May-2025 17:31:21.092 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [1232] milliseconds
+16-May-2025 17:31:21.193 INFO [main] org.apache.catalina.core.StandardService.startInternal Arrancando servicio [Catalina]
+16-May-2025 17:31:21.193 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/9.0.102]
+16-May-2025 17:31:21.214 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Desplieque del descriptor de configuración [C:\Users\clara\Desktop\CrazyCow_BACK\tomcat\conf\Catalina\localhost\CrazyCow_Server.xml]
+16-May-2025 17:31:22.354 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars Al menos un JAR, que se ha explorado buscando TLDs, aún no contenía TLDs. Activar historial de depuración para este historiador para una completa lista de los JARs que fueron explorados y de los que nos se halló TLDs. Saltarse JARs no necesarios durante la exploración puede dar lugar a una mejora de tiempo significativa en el arranque y compilación de JSP .
+16-May-2025 17:31:22.426 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [C:\Users\clara\Desktop\CrazyCow_BACK\tomcat\conf\Catalina\localhost\CrazyCow_Server.xml] has finished in [1.207] ms
+16-May-2025 17:31:22.428 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Desplegando el directorio [C:\Users\clara\Desktop\CrazyCow_BACK\tomcat\webapps\docs] de la aplicación web
+16-May-2025 17:31:22.481 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\clara\Desktop\CrazyCow_BACK\tomcat\webapps\docs] has finished in [52] ms
+16-May-2025 17:31:22.481 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Desplegando el directorio [C:\Users\clara\Desktop\CrazyCow_BACK\tomcat\webapps\examples] de la aplicación web
+16-May-2025 17:31:22.957 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\clara\Desktop\CrazyCow_BACK\tomcat\webapps\examples] has finished in [476] ms
+16-May-2025 17:31:22.957 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Desplegando el directorio [C:\Users\clara\Desktop\CrazyCow_BACK\tomcat\webapps\host-manager] de la aplicación web
+16-May-2025 17:31:23.003 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\clara\Desktop\CrazyCow_BACK\tomcat\webapps\host-manager] has finished in [45] ms
+16-May-2025 17:31:23.003 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Desplegando el directorio [C:\Users\clara\Desktop\CrazyCow_BACK\tomcat\webapps\manager] de la aplicación web
+16-May-2025 17:31:23.052 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\clara\Desktop\CrazyCow_BACK\tomcat\webapps\manager] has finished in [49] ms
+16-May-2025 17:31:23.053 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Desplegando el directorio [C:\Users\clara\Desktop\CrazyCow_BACK\tomcat\webapps\ROOT] de la aplicación web
+16-May-2025 17:31:23.084 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\clara\Desktop\CrazyCow_BACK\tomcat\webapps\ROOT] has finished in [30] ms
+16-May-2025 17:31:23.093 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+16-May-2025 17:31:23.125 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [2030] milliseconds
+16-May-2025 17:43:32.242 INFO [Thread-1] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8080"]
+16-May-2025 17:43:32.242 INFO [Thread-1] org.apache.catalina.core.StandardService.stopInternal Parando servicio [Catalina]
+16-May-2025 17:43:32.273 WARNING [Thread-1] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesJdbc La aplicación web [CrazyCow_Server] registró el conductor JDBC [com.mysql.cj.jdbc.Driver] pero falló al anular el registro mientras la aplicación web estaba parada. Para prevenir un fallo de memoria, se ha anulado el registro del conductor JDBC por la fuerza.
+16-May-2025 17:43:32.273 WARNING [Thread-1] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [CrazyCow_Server] appears to have started a thread named [mysql-cj-abandoned-connection-cleanup] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base/jdk.internal.misc.Unsafe.park(Native Method)
+ java.base/java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:269)
+ java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1852)
+ java.base/java.lang.ref.ReferenceQueue.await(ReferenceQueue.java:79)
+ java.base/java.lang.ref.ReferenceQueue.remove0(ReferenceQueue.java:151)
+ java.base/java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:229)
+ com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:84)
+ java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+ java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+ java.base/java.lang.Thread.run(Thread.java:1575)
+16-May-2025 17:43:32.289 INFO [Thread-1] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8080"]
+16-May-2025 17:43:32.305 INFO [Thread-1] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8080"]
+16-May-2025 17:43:32.334 INFO [mysql-cj-abandoned-connection-cleanup] org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading Acceso ilegal: esta instancia de aplicación web ya ha sido parada.  Could not load [].  La eventual traza de pila que sigue ha sido motivada por un error lanzado con motivos de depuración así como para intentar terminar el hilo que motivó el acceso ilegal y no tiene impacto funcional.
+	java.lang.IllegalStateException: Acceso ilegal: esta instancia de aplicación web ya ha sido parada.  Could not load [].  La eventual traza de pila que sigue ha sido motivada por un error lanzado con motivos de depuración así como para intentar terminar el hilo que motivó el acceso ilegal y no tiene impacto funcional.
+		at org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading(WebappClassLoaderBase.java:1373)
+		at org.apache.catalina.loader.WebappClassLoaderBase.getResource(WebappClassLoaderBase.java:996)
+		at com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.checkThreadContextClassLoader(AbandonedConnectionCleanupThread.java:116)
+		at com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:83)
+		at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+		at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+		at java.base/java.lang.Thread.run(Thread.java:1575)
+16-May-2025 17:43:34.921 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Nombre de la versión del servidor: Apache Tomcat/9.0.102
+16-May-2025 17:43:34.928 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:                      Mar 3 2025 19:33:14 UTC
+16-May-2025 17:43:34.928 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Número de versión de servidor:     9.0.102.0
+16-May-2025 17:43:34.928 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:                           Windows 11
+16-May-2025 17:43:34.929 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Versión de Systema Operativo:      10.0
+16-May-2025 17:43:34.929 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Arquitectura:                      amd64
+16-May-2025 17:43:34.929 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:                         C:\Users\clara\.jdks\openjdk-23.0.1
+16-May-2025 17:43:34.929 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:                       23.0.1+11-39
+16-May-2025 17:43:34.929 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Vededor JVM:                       Oracle Corporation
+16-May-2025 17:43:34.929 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:                     C:\Users\clara\Desktop\CrazyCow_BACK\tomcat
+16-May-2025 17:43:34.930 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:                     C:\Users\clara\Documents\DAW\PROGRAMACION\3TRIMESTRE\tomcat
+16-May-2025 17:43:34.945 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             --add-opens=java.base/java.lang=ALL-UNNAMED
+16-May-2025 17:43:34.946 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             --add-opens=java.base/java.io=ALL-UNNAMED
+16-May-2025 17:43:34.946 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             --add-opens=java.base/java.util=ALL-UNNAMED
+16-May-2025 17:43:34.946 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+16-May-2025 17:43:34.947 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+16-May-2025 17:43:34.947 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Dcatalina.home=C:\Users\clara\Documents\DAW\PROGRAMACION\3TRIMESTRE\tomcat
+16-May-2025 17:43:34.947 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Dcatalina.base=C:\Users\clara\Desktop\CrazyCow_BACK\tomcat
+16-May-2025 17:43:34.947 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Djava.io.tmpdir=C:\Users\clara\Desktop\CrazyCow_BACK\tomcat\temp
+16-May-2025 17:43:34.948 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Djava.util.logging.config.file=C:\Users\clara\Desktop\CrazyCow_BACK\tomcat\conf\logging.properties
+16-May-2025 17:43:34.948 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+16-May-2025 17:43:34.949 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -javaagent:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2024.2.3\lib\idea_rt.jar=60600:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2024.2.3\bin
+16-May-2025 17:43:34.950 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Dfile.encoding=UTF-8
+16-May-2025 17:43:34.950 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Dsun.stdout.encoding=UTF-8
+16-May-2025 17:43:34.951 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Dsun.stderr.encoding=UTF-8
+16-May-2025 17:43:34.956 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent Cargada la biblioteca nativa APR de Apache Tomcat [1.3.1] con la versión APR [1.7.4].
+16-May-2025 17:43:34.957 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent Capacidades APR: IPv6 [true], enviar fichero [true], aceptar filtros [false], aleatorio [true], UDS [true].
+16-May-2025 17:43:34.957 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+16-May-2025 17:43:34.969 INFO [main] org.apache.catalina.core.AprLifecycleListener.initializeSSL OpenSSL inicializado correctamente [OpenSSL 3.0.14 4 Jun 2024]
+16-May-2025 17:43:35.684 INFO [main] org.apache.coyote.AbstractProtocol.init Inicializando el manejador de protocolo ["http-nio-8080"]
+
+16-May-2025 17:43:35.724 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [1200] milliseconds
+16-May-2025 17:43:35.813 INFO [main] org.apache.catalina.core.StandardService.startInternal Arrancando servicio [Catalina]
+16-May-2025 17:43:35.813 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/9.0.102]
+16-May-2025 17:43:35.833 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Desplieque del descriptor de configuración [C:\Users\clara\Desktop\CrazyCow_BACK\tomcat\conf\Catalina\localhost\CrazyCow_Server.xml]
+16-May-2025 17:43:36.912 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars Al menos un JAR, que se ha explorado buscando TLDs, aún no contenía TLDs. Activar historial de depuración para este historiador para una completa lista de los JARs que fueron explorados y de los que nos se halló TLDs. Saltarse JARs no necesarios durante la exploración puede dar lugar a una mejora de tiempo significativa en el arranque y compilación de JSP .
+16-May-2025 17:43:36.991 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [C:\Users\clara\Desktop\CrazyCow_BACK\tomcat\conf\Catalina\localhost\CrazyCow_Server.xml] has finished in [1.151] ms
+16-May-2025 17:43:36.992 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Desplegando el directorio [C:\Users\clara\Desktop\CrazyCow_BACK\tomcat\webapps\docs] de la aplicación web
+16-May-2025 17:43:37.045 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\clara\Desktop\CrazyCow_BACK\tomcat\webapps\docs] has finished in [52] ms
+16-May-2025 17:43:37.045 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Desplegando el directorio [C:\Users\clara\Desktop\CrazyCow_BACK\tomcat\webapps\examples] de la aplicación web
+16-May-2025 17:43:37.515 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\clara\Desktop\CrazyCow_BACK\tomcat\webapps\examples] has finished in [470] ms
+16-May-2025 17:43:37.515 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Desplegando el directorio [C:\Users\clara\Desktop\CrazyCow_BACK\tomcat\webapps\host-manager] de la aplicación web
+16-May-2025 17:43:37.576 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\clara\Desktop\CrazyCow_BACK\tomcat\webapps\host-manager] has finished in [61] ms
+16-May-2025 17:43:37.577 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Desplegando el directorio [C:\Users\clara\Desktop\CrazyCow_BACK\tomcat\webapps\manager] de la aplicación web
+16-May-2025 17:43:37.629 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\clara\Desktop\CrazyCow_BACK\tomcat\webapps\manager] has finished in [52] ms
+16-May-2025 17:43:37.630 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Desplegando el directorio [C:\Users\clara\Desktop\CrazyCow_BACK\tomcat\webapps\ROOT] de la aplicación web
+16-May-2025 17:43:37.664 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\clara\Desktop\CrazyCow_BACK\tomcat\webapps\ROOT] has finished in [35] ms
+16-May-2025 17:43:37.674 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+16-May-2025 17:43:37.703 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [1977] milliseconds
+16-May-2025 18:12:39.949 INFO [Thread-1] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8080"]
+16-May-2025 18:12:39.959 INFO [Thread-1] org.apache.catalina.core.StandardService.stopInternal Parando servicio [Catalina]
+16-May-2025 18:12:39.994 WARNING [Thread-1] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesJdbc La aplicación web [CrazyCow_Server] registró el conductor JDBC [com.mysql.cj.jdbc.Driver] pero falló al anular el registro mientras la aplicación web estaba parada. Para prevenir un fallo de memoria, se ha anulado el registro del conductor JDBC por la fuerza.
+16-May-2025 18:12:39.995 WARNING [Thread-1] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [CrazyCow_Server] appears to have started a thread named [mysql-cj-abandoned-connection-cleanup] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base/jdk.internal.misc.Unsafe.park(Native Method)
+ java.base/java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:269)
+ java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1852)
+ java.base/java.lang.ref.ReferenceQueue.await(ReferenceQueue.java:79)
+ java.base/java.lang.ref.ReferenceQueue.remove0(ReferenceQueue.java:151)
+ java.base/java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:229)
+ com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:84)
+ java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+ java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+ java.base/java.lang.Thread.run(Thread.java:1575)
+16-May-2025 18:12:39.999 INFO [Thread-1] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8080"]
+16-May-2025 18:12:40.008 INFO [Thread-1] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8080"]
+16-May-2025 18:12:44.196 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Nombre de la versión del servidor: Apache Tomcat/9.0.102
+16-May-2025 18:12:44.203 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:                      Mar 3 2025 19:33:14 UTC
+16-May-2025 18:12:44.203 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Número de versión de servidor:     9.0.102.0
+16-May-2025 18:12:44.204 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:                           Windows 11
+16-May-2025 18:12:44.204 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Versión de Systema Operativo:      10.0
+16-May-2025 18:12:44.204 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Arquitectura:                      amd64
+16-May-2025 18:12:44.204 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:                         C:\Users\clara\.jdks\openjdk-23.0.1
+16-May-2025 18:12:44.204 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:                       23.0.1+11-39
+16-May-2025 18:12:44.204 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Vededor JVM:                       Oracle Corporation
+16-May-2025 18:12:44.205 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:                     C:\Users\clara\Desktop\CrazyCow_BACK\tomcat
+16-May-2025 18:12:44.205 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:                     C:\Users\clara\Documents\DAW\PROGRAMACION\3TRIMESTRE\tomcat
+16-May-2025 18:12:44.218 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             --add-opens=java.base/java.lang=ALL-UNNAMED
+16-May-2025 18:12:44.218 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             --add-opens=java.base/java.io=ALL-UNNAMED
+16-May-2025 18:12:44.218 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             --add-opens=java.base/java.util=ALL-UNNAMED
+16-May-2025 18:12:44.218 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+16-May-2025 18:12:44.219 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+16-May-2025 18:12:44.219 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Dcatalina.home=C:\Users\clara\Documents\DAW\PROGRAMACION\3TRIMESTRE\tomcat
+16-May-2025 18:12:44.219 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Dcatalina.base=C:\Users\clara\Desktop\CrazyCow_BACK\tomcat
+16-May-2025 18:12:44.219 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Djava.io.tmpdir=C:\Users\clara\Desktop\CrazyCow_BACK\tomcat\temp
+16-May-2025 18:12:44.219 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Djava.util.logging.config.file=C:\Users\clara\Desktop\CrazyCow_BACK\tomcat\conf\logging.properties
+16-May-2025 18:12:44.219 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+16-May-2025 18:12:44.220 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -javaagent:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2024.2.3\lib\idea_rt.jar=60702:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2024.2.3\bin
+16-May-2025 18:12:44.220 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Dfile.encoding=UTF-8
+16-May-2025 18:12:44.220 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Dsun.stdout.encoding=UTF-8
+16-May-2025 18:12:44.220 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Dsun.stderr.encoding=UTF-8
+16-May-2025 18:12:44.225 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent Cargada la biblioteca nativa APR de Apache Tomcat [1.3.1] con la versión APR [1.7.4].
+16-May-2025 18:12:44.226 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent Capacidades APR: IPv6 [true], enviar fichero [true], aceptar filtros [false], aleatorio [true], UDS [true].
+16-May-2025 18:12:44.226 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+16-May-2025 18:12:44.235 INFO [main] org.apache.catalina.core.AprLifecycleListener.initializeSSL OpenSSL inicializado correctamente [OpenSSL 3.0.14 4 Jun 2024]
+16-May-2025 18:12:44.919 INFO [main] org.apache.coyote.AbstractProtocol.init Inicializando el manejador de protocolo ["http-nio-8080"]
+
+16-May-2025 18:12:44.952 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [1182] milliseconds
+16-May-2025 18:12:45.036 INFO [main] org.apache.catalina.core.StandardService.startInternal Arrancando servicio [Catalina]
+16-May-2025 18:12:45.036 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/9.0.102]
+16-May-2025 18:12:45.051 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Desplieque del descriptor de configuración [C:\Users\clara\Desktop\CrazyCow_BACK\tomcat\conf\Catalina\localhost\CrazyCow_Server.xml]
+16-May-2025 18:12:46.203 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars Al menos un JAR, que se ha explorado buscando TLDs, aún no contenía TLDs. Activar historial de depuración para este historiador para una completa lista de los JARs que fueron explorados y de los que nos se halló TLDs. Saltarse JARs no necesarios durante la exploración puede dar lugar a una mejora de tiempo significativa en el arranque y compilación de JSP .
+16-May-2025 18:12:46.286 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [C:\Users\clara\Desktop\CrazyCow_BACK\tomcat\conf\Catalina\localhost\CrazyCow_Server.xml] has finished in [1.228] ms
+16-May-2025 18:12:46.288 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Desplegando el directorio [C:\Users\clara\Desktop\CrazyCow_BACK\tomcat\webapps\docs] de la aplicación web
+16-May-2025 18:12:46.346 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\clara\Desktop\CrazyCow_BACK\tomcat\webapps\docs] has finished in [59] ms
+16-May-2025 18:12:46.347 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Desplegando el directorio [C:\Users\clara\Desktop\CrazyCow_BACK\tomcat\webapps\examples] de la aplicación web
+16-May-2025 18:12:46.861 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\clara\Desktop\CrazyCow_BACK\tomcat\webapps\examples] has finished in [513] ms
+16-May-2025 18:12:46.862 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Desplegando el directorio [C:\Users\clara\Desktop\CrazyCow_BACK\tomcat\webapps\host-manager] de la aplicación web
+16-May-2025 18:12:46.904 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\clara\Desktop\CrazyCow_BACK\tomcat\webapps\host-manager] has finished in [43] ms
+16-May-2025 18:12:46.904 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Desplegando el directorio [C:\Users\clara\Desktop\CrazyCow_BACK\tomcat\webapps\manager] de la aplicación web
+16-May-2025 18:12:46.949 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\clara\Desktop\CrazyCow_BACK\tomcat\webapps\manager] has finished in [44] ms
+16-May-2025 18:12:46.949 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Desplegando el directorio [C:\Users\clara\Desktop\CrazyCow_BACK\tomcat\webapps\ROOT] de la aplicación web
+16-May-2025 18:12:46.979 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\clara\Desktop\CrazyCow_BACK\tomcat\webapps\ROOT] has finished in [30] ms
+16-May-2025 18:12:46.988 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+16-May-2025 18:12:47.017 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [2063] milliseconds
+16-May-2025 18:26:36.836 INFO [Thread-1] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8080"]
+16-May-2025 18:26:36.844 INFO [Thread-1] org.apache.catalina.core.StandardService.stopInternal Parando servicio [Catalina]
+16-May-2025 18:26:36.870 WARNING [Thread-1] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesJdbc La aplicación web [CrazyCow_Server] registró el conductor JDBC [com.mysql.cj.jdbc.Driver] pero falló al anular el registro mientras la aplicación web estaba parada. Para prevenir un fallo de memoria, se ha anulado el registro del conductor JDBC por la fuerza.
+16-May-2025 18:26:36.870 WARNING [Thread-1] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [CrazyCow_Server] appears to have started a thread named [mysql-cj-abandoned-connection-cleanup] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base/jdk.internal.misc.Unsafe.park(Native Method)
+ java.base/java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:269)
+ java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1852)
+ java.base/java.lang.ref.ReferenceQueue.await(ReferenceQueue.java:79)
+ java.base/java.lang.ref.ReferenceQueue.remove0(ReferenceQueue.java:151)
+ java.base/java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:229)
+ com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:84)
+ java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+ java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+ java.base/java.lang.Thread.run(Thread.java:1575)
+16-May-2025 18:26:36.875 INFO [Thread-1] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8080"]
+16-May-2025 18:26:36.887 INFO [Thread-1] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8080"]
+16-May-2025 18:26:36.913 INFO [mysql-cj-abandoned-connection-cleanup] org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading Acceso ilegal: esta instancia de aplicación web ya ha sido parada.  Could not load [].  La eventual traza de pila que sigue ha sido motivada por un error lanzado con motivos de depuración así como para intentar terminar el hilo que motivó el acceso ilegal y no tiene impacto funcional.
+	java.lang.IllegalStateException: Acceso ilegal: esta instancia de aplicación web ya ha sido parada.  Could not load [].  La eventual traza de pila que sigue ha sido motivada por un error lanzado con motivos de depuración así como para intentar terminar el hilo que motivó el acceso ilegal y no tiene impacto funcional.
+		at org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading(WebappClassLoaderBase.java:1373)
+		at org.apache.catalina.loader.WebappClassLoaderBase.getResource(WebappClassLoaderBase.java:996)
+		at com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.checkThreadContextClassLoader(AbandonedConnectionCleanupThread.java:116)
+		at com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:83)
+		at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+		at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+		at java.base/java.lang.Thread.run(Thread.java:1575)

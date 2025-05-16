@@ -25,6 +25,7 @@ public class OrderDetailDao implements IDao{
     public int add(Object bean) {
         int filas =0;
 
+
         if (bean!=null && bean instanceof OrderDetail){
             OrderDetail orderDetail = (OrderDetail) bean;
             PreparedStatement ps = null;
@@ -32,7 +33,7 @@ public class OrderDetailDao implements IDao{
 
             try{
                 motorSql.connect();
-
+                motorSql.getConnection().setAutoCommit(false);
                 ps = motorSql.getConnection().prepareStatement(sql);
 
                 ps.setInt(1,orderDetail.getOrder_id());
@@ -40,11 +41,20 @@ public class OrderDetailDao implements IDao{
                 ps.setInt(3,orderDetail.getQuantity());
 
                 filas = motorSql.executeUpdate(ps);
+                motorSql.getConnection().commit();
             }
             catch (SQLException sqlException){
-                System.out.println(sqlException.getMessage());
+                try {
+                    motorSql.getConnection().rollback(); // Rollback en error
+                } catch (SQLException ex) {
+                    ex.printStackTrace();
+                }
+                System.out.println("Error al intentar insertar los detalles del pedido. " + sqlException.getMessage());
             }
             finally {
+                if (ps != null) {
+                    try { ps.close(); } catch (SQLException e) { /* log */ }
+                }
                 motorSql.disconnect();
             }
         }

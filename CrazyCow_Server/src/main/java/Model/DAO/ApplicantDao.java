@@ -13,6 +13,7 @@ public class ApplicantDao implements IDao {
 
     private final String SQL_FIND_ALL= "SELECT A.*, JO.title FROM APPLICANTS A JOIN JOB_OFFERS_APPLICANTS JOA ON A.applicant_id = JOA.applicant_id JOIN JOB_OFFERS JO ON JOA.job_offer_id = JO.job_offer_id";
     private final String SQL_ADD_APPLICANT = "INSERT INTO APPLICANTS (name, surname, email, phone_number, address, resume) VALUES (?,?,?,?,?,?)";
+    private final String SQL_INSERT_JOB_OFFERS_APPLICANTS = "INSERT INTO JOB_OFFERS_APPLICANTS (job_offer_id,applicant_id,application_date) VALUES (?,?,CURRENT_TIMESTAMP);" ;
     private IMotorSql motorSql;
 
 
@@ -42,6 +43,8 @@ public class ApplicantDao implements IDao {
                 ps.setString(6, applicant.getResume());
 
                 filas = motorSql.executeUpdate(ps);
+
+
 
             } catch (SQLException e) {
                 System.out.println("Error en addApplicantDao" + e.getMessage());

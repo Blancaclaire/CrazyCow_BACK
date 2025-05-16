@@ -12,3 +12,13 @@
 0:0:0:0:0:0:0:1 - - [16/May/2025:16:05:05 +0200] "GET /CrazyCow_Server/Controller?ACTION=EMPLOYEE.FIND_ALL&email=clara.alonso.jimenez@gmail.com HTTP/1.1" 200 2
 0:0:0:0:0:0:0:1 - - [16/May/2025:16:07:02 +0200] "GET /CrazyCow_Server/Controller?ACTION=EMPLOYEE.FIND_ALL&email=clara.alonso.jimenez@gmail.com HTTP/1.1" 200 2
 0:0:0:0:0:0:0:1 - - [16/May/2025:16:15:08 +0200] "GET /CrazyCow_Server/Controller?ACTION=EMPLOYEE.FIND_ALL&email=clara.alonso.jimenez@gmail.com HTTP/1.1" 200 390
+0:0:0:0:0:0:0:1 - - [16/May/2025:16:38:01 +0200] "GET /CrazyCow_Server/Controller?ACTION=ORDER.ADD&customer_id=13001&restaurant_id=10000&order_status=Preparation&total=50.99&location=Calle%20Principal%20123&order_details=8000:2,8001:1&holder_name=Clara%20Doe&holder_number=1234567890123456&cvv=123&card_type=VISA HTTP/1.1" 200 29
+0:0:0:0:0:0:0:1 - - [16/May/2025:16:47:40 +0200] "GET /CrazyCow_Server/Controller?ACTION=ORDER.ADD&customer_id=13001&restaurant_id=10000&order_status=Preparation&total=50.99&location=Calle%20Principal%20123&order_details=8000:2,8001:1&holder_name=Clara%20Doe&holder_number=1234567890123456&cvv=123&card_type=VISA HTTP/1.1" 200 29
+0:0:0:0:0:0:0:1 - - [16/May/2025:17:31:44 +0200] "GET /CrazyCow_Server/Controller?ACTION=ORDER.ADD&customer_id=13001&restaurant_id=10000&order_status=Preparation&total=50.99&location=Calle%20Principal%20123&order_details=8000:2,8001:1&holder_name=Clara%20Doe&holder_number=1234567890123456&cvv=123&card_type=VISA HTTP/1.1" 200 29
+0:0:0:0:0:0:0:1 - - [16/May/2025:17:40:09 +0200] "GET /CrazyCow_Server/Controller?ACTION=ORDER.FIND_ALL HTTP/1.1" 200 3172
+0:0:0:0:0:0:0:1 - - [16/May/2025:17:43:24 +0200] "GET /CrazyCow_Server/Controller?ACTION=ORDER.FIND_ALL HTTP/1.1" 200 3172
+0:0:0:0:0:0:0:1 - - [16/May/2025:17:43:50 +0200] "GET /CrazyCow_Server/Controller?ACTION=ORDER.FIND_ALL HTTP/1.1" 200 3172
+0:0:0:0:0:0:0:1 - - [16/May/2025:17:49:25 +0200] "GET /CrazyCow_Server/Controller?ACTION=ORDER.FIND_ALL HTTP/1.1" 200 842
+0:0:0:0:0:0:0:1 - - [16/May/2025:18:13:10 +0200] "GET /CrazyCow_Server/Controller?ACTION=ORDER.FIND_ALL&restaurant_id=10000 HTTP/1.1" 200 420
+0:0:0:0:0:0:0:1 - - [16/May/2025:18:13:19 +0200] "GET /CrazyCow_Server/Controller?ACTION=ORDER.FIND_ALL&restaurant_id=10001 HTTP/1.1" 200 424
+0:0:0:0:0:0:0:1 - - [16/May/2025:18:20:20 +0200] "GET /CrazyCow_Server/Controller?ACTION=APPLICANT.FIND_ALL HTTP/1.1" 200 579
