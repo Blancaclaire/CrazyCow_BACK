@@ -17,7 +17,7 @@ public class Applicant {
     private String resume;
     private String job_title;
 
-    //private ArrayList<>
+    private int job_offer_id;
 
     //Getter y Setter
 
@@ -85,10 +85,30 @@ public class Applicant {
         this.job_title = job_title;
     }
 
+    public int getJob_offer_id() {
+        return job_offer_id;
+    }
+
+    public void setJob_offer_id(int job_offer_id) {
+        this.job_offer_id = job_offer_id;
+    }
+
     //Constructores
 
     public Applicant(){
 
+    }
+
+    public Applicant(int applicant_id, String name, String surname, String email, String phone_number, String address, String resume, String job_title, int job_offer_id) {
+        this.applicant_id = applicant_id;
+        this.name = name;
+        this.surname = surname;
+        this.email = email;
+        this.phone_number = phone_number;
+        this.address = address;
+        this.resume = resume;
+        this.job_title = job_title;
+        this.job_offer_id = job_offer_id;
     }
 
     public Applicant(int applicant_id, String name, String surname, String email, String phone_number, String address, String resume) {
@@ -114,6 +134,7 @@ public class Applicant {
     }
 
     //metodos
+
 
 
     @Override

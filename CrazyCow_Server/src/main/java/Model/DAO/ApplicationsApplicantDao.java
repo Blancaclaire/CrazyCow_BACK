@@ -31,12 +31,19 @@ public class ApplicationsApplicantDao implements IDao{
                 motorSql.connect();
 
                 ps = motorSql.getConnection().prepareStatement(sql);
+                ps.setInt(1, applicationsApplicant.getJob_offer_id());
+                ps.setInt(2,applicationsApplicant.getApplicant_id());
+
+                filas = motorSql.executeUpdate(ps);
             }
             catch (SQLException sqlException){
                 System.out.println("ERROR en add ApplicationsApplicantDAo " + sqlException.getMessage() );
             }
+            finally {
+                motorSql.disconnect();
+            }
         }
-        return 0;
+        return filas;
     }
 
     @Override

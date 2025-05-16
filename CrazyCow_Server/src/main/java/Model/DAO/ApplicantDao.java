@@ -1,12 +1,14 @@
 package Model.DAO;
 
 import Model.Entities.Applicant;
+import Model.Entities.ApplicationsApplicant;
 import Model.MotorMySql.IMotorSql;
 import Model.MotorMySql.MotorSql;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 
 public class ApplicantDao implements IDao {
@@ -25,6 +27,7 @@ public class ApplicantDao implements IDao {
     @Override
     public int add(Object bean) {
         int filas = 0;
+        ResultSet generatedKeys= null;
         if (bean != null && bean instanceof Applicant) {
             Applicant applicant = (Applicant) bean;
             PreparedStatement ps = null;
@@ -33,7 +36,7 @@ public class ApplicantDao implements IDao {
             try {
                 motorSql.connect();
 
-                ps = motorSql.getConnection().prepareStatement(sql);
+                ps = motorSql.getConnection().prepareStatement(sql,Statement.RETURN_GENERATED_KEYS);
 
                 ps.setString(1, applicant.getName());
                 ps.setString(2, applicant.getSurname());
@@ -44,7 +47,10 @@ public class ApplicantDao implements IDao {
 
                 filas = motorSql.executeUpdate(ps);
 
-
+                generatedKeys = ps.getGeneratedKeys();
+                if (generatedKeys.next()) {
+                    applicant.setApplicant_id(generatedKeys.getInt(1));  // Actualizar el ID en el objeto
+                }
 
             } catch (SQLException e) {
                 System.out.println("Error en addApplicantDao" + e.getMessage());
@@ -56,6 +62,11 @@ public class ApplicantDao implements IDao {
         }
         return filas;
     }
+
+
+
+
+
 
     @Override
     public int delete(Object e) {
