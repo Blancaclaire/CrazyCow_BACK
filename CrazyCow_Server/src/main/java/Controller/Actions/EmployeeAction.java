@@ -19,8 +19,8 @@ public class EmployeeAction implements  IAction{
         switch (action) {
 
             case "FIND_ALL":
-                //http://localhost:8080/CrazyCow_Server/Controller?ACTION=EMPLOYEE.FIND_ALL
-                strReturn =findAll();
+                //http://localhost:8080/CrazyCow_Server/Controller?ACTION=EMPLOYEE.FIND_ALL&email=clara.alonso.jimenez@gmail.com
+                strReturn =findAll(objectParams);
                 break;
 
             case "LOGIN" :
@@ -37,10 +37,24 @@ public class EmployeeAction implements  IAction{
         return strReturn;
     }
 
-    public String findAll(){
+    public String findAll(Map<String, String[]>objectParams){
         String strReturn = "";
         EmployeeDao employeeDao = new EmployeeDao();
+
         Employee employee = new Employee();
+
+        //Procesamos email
+        if (objectParams.get("email") != null && objectParams.get("email").length > 0) {
+            System.out.println("Valor recibido email " + objectParams.get("email")[0]);
+            employee.setEmail(objectParams.get("email")[0]);
+        }
+        //Procesamos job_id
+        if (objectParams.get("job_id") != null && objectParams.get("job_id").length > 0) {
+            System.out.println("Valor recibido job_id: " + objectParams.get("job_id")[0]);
+            employee.setJob_id(Integer.parseInt(objectParams.get("job_id")[0]));
+        }
+
+
         ArrayList<Employee> listEmployees = employeeDao.findAll(employee);
         strReturn = Employee.toArrayJson(listEmployees);
         return strReturn;

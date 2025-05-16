@@ -44,7 +44,7 @@ CREATE TABLE APPLICANTS (
     applicant_id INT PRIMARY KEY AUTO_INCREMENT, -- IDs del 7000 al 8000
     name VARCHAR(255) NOT NULL,
     surname VARCHAR(255) NOT NULL,
-    email VARCHAR(255) NOT NULL,
+    email VARCHAR(255) NOT NULL UNIQUE,
     phone_number VARCHAR(20) NOT NULL,
     address VARCHAR(255) NOT NULL,
     resume VARCHAR(255) NOT NULL, 
@@ -59,7 +59,7 @@ CREATE TABLE EMPLOYEES (
     salary DECIMAL(10, 2) NOT NULL,
     name VARCHAR(255) NOT NULL,
     surname VARCHAR(255) NOT NULL,
-    email VARCHAR(255) NOT NULL,
+    email VARCHAR(255) NOT NULL UNIQUE,
     phone_number VARCHAR(20) NOT NULL,
     user_name VARCHAR(255) NOT NULL,
     password VARCHAR(255) NOT NULL,

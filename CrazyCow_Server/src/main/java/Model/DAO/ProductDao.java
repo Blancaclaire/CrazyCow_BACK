@@ -110,7 +110,7 @@ public class ProductDao implements IDao {
         String sql = SQL_FIND_ALL;
 
         try {
-            if (bean != null) {
+            if (bean != null && bean instanceof Product) {
                 Product product = (Product) bean;  // Si el objeto no es nulo se convierte en un objeto Producto
 
                 motorSql.connect();
@@ -140,23 +140,24 @@ public class ProductDao implements IDao {
                 for (int i = 0; i < parameters.size(); i++) {
                     ps.setInt(i + 1, parameters.get(i));
                 }
-            }
 
-            // Ejecutamos la consulta y obtenemos resultados
-            rs = ps.executeQuery();
 
-            // Procesamos los resultados
-            while (rs.next()) {
-                Product productBd = new Product(
-                        rs.getInt("product_id"),
-                        rs.getInt("category_id"),
-                        rs.getString("product_name"),
-                        rs.getString("description"),
-                        rs.getDouble("price"),
-                        rs.getString("image")
-                );
-                listProducts.add(productBd);
+                // Ejecutamos la consulta y obtenemos resultados
+                rs = ps.executeQuery();
 
+                // Procesamos los resultados
+                while (rs.next()) {
+                    Product productBd = new Product(
+                            rs.getInt("product_id"),
+                            rs.getInt("category_id"),
+                            rs.getString("product_name"),
+                            rs.getString("description"),
+                            rs.getDouble("price"),
+                            rs.getString("image")
+                    );
+                    listProducts.add(productBd);
+
+                }
             }
 
 
@@ -214,7 +215,6 @@ public class ProductDao implements IDao {
 
         return product;
     }
-
 
 
     @Override

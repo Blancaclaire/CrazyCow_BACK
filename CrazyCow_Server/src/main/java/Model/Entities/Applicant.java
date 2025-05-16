@@ -15,8 +15,9 @@ public class Applicant {
     private String phone_number;
     private String address;
     private String resume;
+    private String job_title;
 
-
+    //private ArrayList<>
 
     //Getter y Setter
 
@@ -76,8 +77,13 @@ public class Applicant {
         this.resume = resume;
     }
 
+    public String getJob_title() {
+        return job_title;
+    }
 
-
+    public void setJob_title(String job_title) {
+        this.job_title = job_title;
+    }
 
     //Constructores
 
@@ -94,6 +100,17 @@ public class Applicant {
         this.address = address;
         this.resume = resume;
 
+    }
+
+    public Applicant(int applicant_id, String name, String surname, String email, String phone_number, String address, String resume, String job_title) {
+        this.applicant_id = applicant_id;
+        this.name = name;
+        this.surname = surname;
+        this.email = email;
+        this.phone_number = phone_number;
+        this.address = address;
+        this.resume = resume;
+        this.job_title = job_title;
     }
 
     //metodos

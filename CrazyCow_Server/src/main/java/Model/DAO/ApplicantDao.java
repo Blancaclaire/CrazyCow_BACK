@@ -11,9 +11,10 @@ import java.util.ArrayList;
 
 public class ApplicantDao implements IDao {
 
+    private final String SQL_FIND_ALL= "SELECT A.*, JO.title FROM APPLICANTS A JOIN JOB_OFFERS_APPLICANTS JOA ON A.applicant_id = JOA.applicant_id JOIN JOB_OFFERS JO ON JOA.job_offer_id = JO.job_offer_id";
     private final String SQL_ADD_APPLICANT = "INSERT INTO APPLICANTS (name, surname, email, phone_number, address, resume) VALUES (?,?,?,?,?,?)";
-    private final String SQL_FIND_ALL = "SELECT * FROM APPLICANTS WHERE 1=1";
     private IMotorSql motorSql;
+
 
     public ApplicantDao() {
         motorSql = new MotorSql();
@@ -85,7 +86,8 @@ public class ApplicantDao implements IDao {
                         rs.getString("email"),
                         rs.getString("phone_number"),
                         rs.getString("address"),
-                        rs.getString("resume")
+                        rs.getString("resume"),
+                        rs.getString("title")
 
                 );
 
