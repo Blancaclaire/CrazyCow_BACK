@@ -7,18 +7,29 @@ import Model.MotorMySql.MotorSql;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.ArrayList;
-
+/**
+ * Clase DAO (Data Access Object) para gestionar operaciones de base de datos
+ * relacionadas con pagos (Payment) de pedidos.
+ * Implementa la interfaz IDao para métodos CRUD básicos.
+ */
 public class PaymentDao implements IDao {
 
+    // Consulta SQL para insertar un nuevo pago
     private String SQL_INSERT_PAYMENT = "INSERT INTO PAYMENTS(order_id,holder_name,holder_number,cvv,card_type,price) VALUES (?,?,?,?,?,?)";
 
     private IMotorSql motorSql;
 
+    /** Constructor: Inicializa el motor de base de datos */
     public PaymentDao() {
         motorSql = new MotorSql();
     }
 
-
+    /**
+     * Metodo para agregar un nuevo pago a la base de datos.
+     *
+     * @param bean Objeto Payment que contiene los datos del pago.
+     * @return Número de filas afectadas (1 si éxito, 0 si falla).
+     */
     @Override
     public int add(Object bean) {
         int filas = 0;

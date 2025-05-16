@@ -11,19 +11,51 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
+/**
+ * Implementación del DAO para la entidad Product.
+ * Gestiona todas las operaciones CRUD (Crear, Leer, Actualizar, Eliminar)
+ * para los productos en la base de datos.
+ */
 public class ProductDao implements IDao {
 
+    // ==================== CONSTANTES SQL ====================
+
+    /** Consulta SQL para obtener todos los productos */
     private final String SQL_FIND_ALL = "SELECT * FROM PRODUCTS WHERE 1=1";
+
+    /** Consulta SQL base para eliminar productos */
     private final String SQL_DELETE = "DELETE FROM PRODUCTS WHERE ";
+
+    /** Consulta SQL para añadir nuevos productos */
     private final String SQL_ADD = "INSERT INTO PRODUCTS (category_id, product_name, description, price, image) VALUES (?,?,?,?,?)";
+
+    /** Consulta SQL base para actualizar productos */
     private final String SQL_UPDATE = "UPDATE PRODUCTS SET ";
+
+    /** Consulta SQL para buscar un producto por su ID */
     private final String SQL_FIND_BY_ID = "SELECT * FROM PRODUCTS WHERE product_id = ?";
+
+    /** Motor de conexión a la base de datos */
     private IMotorSql motorSql;
 
+
+    // ==================== CONSTRUCTOR ====================
+
+    /**
+     * Constructor que inicializa el motor de base de datos.
+     */
     public ProductDao() {
         motorSql = new MotorSql();
     }
 
+    // ==================== MÉTODOS CRUD ====================
+
+    /**
+     * Añade un nuevo producto a la base de datos.
+     *
+     * @param bean Objeto Product a insertar
+     * @return Número de filas afectadas (1 si éxito, 0 si fallo)
+     */
     @Override
     public int add(Object bean) {
         int filasAdd = 0;
@@ -59,6 +91,12 @@ public class ProductDao implements IDao {
         return filasAdd;
     }
 
+    /**
+     * Elimina un producto de la base de datos.
+     *
+     * @param e Puede ser el ID del producto (Integer) o el objeto Product completo
+     * @return Número de filas afectadas (1 si éxito, 0 si fallo)
+     */
     @Override
     public int delete(Object e) {
 
@@ -66,11 +104,11 @@ public class ProductDao implements IDao {
         Integer idProduct = -1; //Inicializo en -1 para que no correponda con  ningun id
         int filasEliminadas = 0;
 
-        //Comprobar el tipo de objeto (o E o I)para asignar al id de elemento
+
         if (e instanceof Integer) {
-            idProduct = (Integer) e; //si es de tipo Integer transforma el tipo de dato que hay en Integer
-        } else if (e instanceof Product) { //Si no es un Integer entonces comprueba si es una instancia de la clase Product
-            idProduct = ((Product) e).getProduct_id(); //se hace un cast y  se llama el getid para obtener el id
+            idProduct = (Integer) e;
+        } else if (e instanceof Product) {
+            idProduct = ((Product) e).getProduct_id();
         }
         String sql = SQL_DELETE;
 
@@ -81,12 +119,9 @@ public class ProductDao implements IDao {
                 sql += " product_id = ?";
                 PreparedStatement sentencia = motorSql.getConnection().prepareStatement(sql);
                 sentencia.setInt(1, idProduct);
-                /*
-                motorSql.setPrepareStatement(sentencia);
-                motorSql.execute();*/
-                //motorSql.execute(sentencia);
 
                 filasEliminadas = motorSql.executeUpdate(sentencia);
+
             } catch (SQLException sqlEx) {
 
                 System.out.println("Error al eliminar el producto: " + sqlEx.getMessage());
@@ -101,7 +136,12 @@ public class ProductDao implements IDao {
 
     @Override
 
-
+    /**
+     * Busca productos según los criterios especificados.
+     *
+     * @param bean Objeto Product con los criterios de búsqueda
+     * @return ArrayList de Product que cumplen los criterios
+     */
     public ArrayList findAll(Object bean) {
         ArrayList listProducts = new ArrayList<>();
         PreparedStatement ps = null;
@@ -173,6 +213,12 @@ public class ProductDao implements IDao {
 
     }
 
+    /**
+     * Busca un producto por su ID y carga sus ingredientes y alérgenos asociados.
+     *
+     * @param productId ID del producto a buscar
+     * @return Objeto Product completo o null si no se encuentra
+     */
     public Product findById(int productId) {
         Product product = null;
         PreparedStatement ps = null;
@@ -216,7 +262,12 @@ public class ProductDao implements IDao {
         return product;
     }
 
-
+    /**
+     * Actualiza un producto existente en la base de datos.
+     *
+     * @param bean Objeto Product con los datos actualizados
+     * @return Número de filas afectadas (1 si éxito, 0 si fallo)
+     */
     @Override
     public int update(Object bean) {
         int filasUpdate = 0;

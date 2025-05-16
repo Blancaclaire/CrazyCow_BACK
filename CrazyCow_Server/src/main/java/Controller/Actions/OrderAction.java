@@ -12,6 +12,10 @@ import javax.servlet.http.HttpServletResponse;
 import java.util.ArrayList;
 import java.util.Map;
 
+/**
+ * Controlador para gestionar todas las operaciones relacionadas con pedidos (Orders)
+ * Incluye creación de nuevos pedidos y consulta de pedidos existentes
+ */
 public class OrderAction implements IAction {
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response, String action, Map<String, String[]> objectParams) {
@@ -37,6 +41,12 @@ public class OrderAction implements IAction {
         return strReturn;
     }
 
+    /**
+     * Obtiene la lista de pedidos, opcionalmente filtrados por restaurante
+     * @param objectParams Puede contener:
+     *        - restaurant_id (opcional): ID del restaurante para filtrar
+     * @return JSON con la lista de pedidos
+     */
     public String findAll(Map<String, String[]>objectParams) {
         String strReturn = "";
         OrderDao orderDao = new OrderDao();
@@ -52,19 +62,30 @@ public class OrderAction implements IAction {
 
     }
 
+    /**
+     * Crea un nuevo pedido con sus productos y datos de pago
+     * @param objectParams Debe contener:
+     *        - customer_id: ID del cliente
+     *        - restaurant_id: ID del restaurante
+     *        - total: Monto total
+     *        - location: Dirección de entrega
+     *        - order_details: Productos en formato "id:cantidad,id:cantidad"
+     *        - Datos de pago (holder_name, holder_number, cvv, card_type)
+     * @return Mensaje de éxito o error
+     */
     private String add(Map<String, String[]> objectParams) {
         OrderDao orderDao = new OrderDao();
         Order newOrder = new Order();
         String strReturn = "";
 
         try {
-            // 1. Validar parámetros obligatorios
+            //  Validar parámetros obligatorios
             if (!objectParams.containsKey("customer_id") || !objectParams.containsKey("restaurant_id")
                     || !objectParams.containsKey("total") || !objectParams.containsKey("location")) {
                 return "ERROR: Faltan parámetros obligatorios (customer_id, restaurant_id, total, location)";
             }
 
-            // 2. Setear datos básicos del Order
+            // Setear datos básicos del Order
             newOrder.setCustomer_id(Integer.parseInt(objectParams.get("customer_id")[0]));
             newOrder.setRestaurant_id(Integer.parseInt(objectParams.get("restaurant_id")[0]));
             newOrder.setTotal(Double.parseDouble(objectParams.get("total")[0]));
@@ -74,7 +95,7 @@ public class OrderAction implements IAction {
             newOrder.setOrder_status(objectParams.containsKey("order_status") ?
                     objectParams.get("order_status")[0] : "pendiente");
 
-            // 3. Procesar productos (OrderDetails)
+            // Procesar productos (OrderDetails)
             if (objectParams.containsKey("order_details")) {
                 String[] products = objectParams.get("order_details")[0].split(",");
 
@@ -94,7 +115,7 @@ public class OrderAction implements IAction {
                 return "ERROR: Se requieren detalles del pedido (parámetro 'order_details')";
             }
 
-            // 4. Procesar Payment
+            // Procesar Payment
             if (objectParams.containsKey("holder_name") && objectParams.containsKey("holder_number") &&
                     objectParams.containsKey("cvv") && objectParams.containsKey("card_type")) {
 
@@ -110,7 +131,7 @@ public class OrderAction implements IAction {
                 return "ERROR: Faltan datos de pago (holder_name, holder_number, cvv, card_type)";
             }
 
-            // 5. Guardar (OrderDao manejará la transacción)
+            // Guardar (OrderDao manejará la transacción)
             int filasAfectadas = orderDao.add(newOrder);
             if (filasAfectadas > 0) {
                 strReturn = "Pedido añadido correctamente";

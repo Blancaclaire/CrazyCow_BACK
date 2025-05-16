@@ -6,9 +6,14 @@ import com.google.gson.GsonBuilder;
 import java.util.ArrayList;
 import java.util.Date;
 
+/**
+ * Clase que representa un pedido/orden en el sistema.
+ * Contiene información sobre el pedido realizado por un cliente,
+ * incluyendo detalles de productos, pago y estado.
+ */
 public class Order {
 
-    //Atributos
+    // ==================== ATRIBUTOS ====================
 
     private int order_id;
     private int customer_id;
@@ -21,7 +26,7 @@ public class Order {
 
     ArrayList<OrderDetail> order_details;
 
-    //Getter and Setter
+    // ==================== MÉTODOS DE ACCESO (GETTERS/SETTERS) ====================
 
     public int getOrder_id() {
         return order_id;
@@ -95,7 +100,8 @@ public class Order {
         this.payment = payment;
     }
 
-    //Constructores
+
+    // ==================== CONSTRUCTORES ====================
 
 
     public Order() {
@@ -114,7 +120,12 @@ public class Order {
 
     }
 
-    //Metodos
+    // ==================== METODOS ====================
+
+    /**
+     * Agrega un detalle (producto) al pedido.
+     * @param **detail Objeto OrderDetail con la información del producto
+     */
 
     public void addOrderDetail(OrderDetail detail) {
         this.order_details.add(detail);
@@ -133,6 +144,11 @@ public class Order {
                 '}';
     }
 
+    /**
+     * Convierte una lista de pedidos a formato JSON.
+     * @param listOrders Lista de pedidos a convertir
+     * @return Cadena JSON con la lista de pedidos
+     */
     public static String toArrayJson(ArrayList<Order> listOrders) {
 
         GsonBuilder builder = new GsonBuilder();

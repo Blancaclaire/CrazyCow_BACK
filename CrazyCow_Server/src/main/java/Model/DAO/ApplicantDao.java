@@ -11,19 +11,34 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 
+/**
+ * Implementación del DAO para gestionar candidatos (Applicant) en el sistema.
+ * Proporciona operaciones CRUD para la gestión de candidatos y sus postulaciones a ofertas de trabajo.
+ */
 public class ApplicantDao implements IDao {
+
+    // Consultas SQL preparadas
 
     private final String SQL_FIND_ALL= "SELECT A.*, JO.title FROM APPLICANTS A JOIN JOB_OFFERS_APPLICANTS JOA ON A.applicant_id = JOA.applicant_id JOIN JOB_OFFERS JO ON JOA.job_offer_id = JO.job_offer_id";
     private final String SQL_ADD_APPLICANT = "INSERT INTO APPLICANTS (name, surname, email, phone_number, address, resume) VALUES (?,?,?,?,?,?)";
-    private final String SQL_INSERT_JOB_OFFERS_APPLICANTS = "INSERT INTO JOB_OFFERS_APPLICANTS (job_offer_id,applicant_id,application_date) VALUES (?,?,CURRENT_TIMESTAMP);" ;
+
     private IMotorSql motorSql;
 
 
+    /**
+     * Constructor que inicializa el motor de base de datos.
+     */
     public ApplicantDao() {
         motorSql = new MotorSql();
     }
 
+    // ==================== MÉTODOS CRUD ====================
 
+    /**
+     * Añade un nuevo candidato a la base de datos.
+     * @param bean Objeto Applicant a insertar
+     * @return Número de filas afectadas (1 si éxito, 0 si fallo)
+     */
     @Override
     public int add(Object bean) {
         int filas = 0;
@@ -36,6 +51,7 @@ public class ApplicantDao implements IDao {
             try {
                 motorSql.connect();
 
+                // Preparar statement con capacidad de retornar claves generadas
                 ps = motorSql.getConnection().prepareStatement(sql,Statement.RETURN_GENERATED_KEYS);
 
                 ps.setString(1, applicant.getName());
@@ -47,6 +63,7 @@ public class ApplicantDao implements IDao {
 
                 filas = motorSql.executeUpdate(ps);
 
+                // Obtener ID generado
                 generatedKeys = ps.getGeneratedKeys();
                 if (generatedKeys.next()) {
                     applicant.setApplicant_id(generatedKeys.getInt(1));  // Actualizar el ID en el objeto
@@ -78,6 +95,11 @@ public class ApplicantDao implements IDao {
         return 0;
     }
 
+    /**
+     * Obtiene todos los candidatos con información de las ofertas a las que han aplicado.
+     * @param bean Parámetro no utilizado (mantenido por compatibilidad con interfaz)
+     * @return ArrayList de objetos Applicant con información de ofertas
+     */
     @Override
     public ArrayList findAll(Object bean) {
 

@@ -6,11 +6,23 @@ import com.google.gson.GsonBuilder;
 import java.util.ArrayList;
 import java.util.Date;
 
+/**
+ * Clase que representa la relación entre candidatos (Applicant) y ofertas de trabajo (JobOffer)
+ * mediante las postulaciones realizadas.
+ * Almacena información sobre qué candidato se postuló a qué oferta y cuándo.
+ */
+
 public class ApplicationsApplicant {
+
+    // ==================== ATRIBUTOS ====================
 
     private int job_offer_id;
     private int  applicant_id;
     private Date application_date;
+
+
+    // ==================== MÉTODOS DE ACCESO (GETTERS/SETTERS) ====================
+
 
     public int getJob_offer_id() {
         return job_offer_id;
@@ -37,7 +49,7 @@ public class ApplicationsApplicant {
     }
 
 
-    //Constructores
+    // ==================== CONSTRUCTORES ====================
 
     public ApplicationsApplicant(){
 
@@ -49,6 +61,8 @@ public class ApplicationsApplicant {
         this.application_date = application_date;
     }
 
+    // ==================== METODOS ====================
+
     @Override
     public String toString() {
         return "ApplicationsApplicant{" +
@@ -57,6 +71,13 @@ public class ApplicationsApplicant {
                 ", application_date=" + application_date +
                 '}';
     }
+
+    /**
+     * Convierte una lista de postulaciones a formato JSON usando la librería Gson.
+     *
+     * @param listApplicationsApplicant Lista de postulaciones a convertir
+     * @return Cadena en formato JSON que representa la lista de postulaciones
+     */
     public static String toArrayJson(ArrayList<ApplicationsApplicant> listApplicationsApplicant) {
 
         GsonBuilder builder = new GsonBuilder();

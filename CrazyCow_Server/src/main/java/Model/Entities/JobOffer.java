@@ -5,15 +5,20 @@ import com.google.gson.GsonBuilder;
 
 import java.util.ArrayList;
 
+/**
+ * Clase que representa una oferta de trabajo en el sistema.
+ * Contiene información sobre las posiciones laborales disponibles.
+ */
 public class JobOffer {
+
+    // ==================== ATRIBUTOS ====================
     private int job_offer_id;
     private int job_id;
     private String title;
     private String descriptioin;
     private String location;
 
-    //Getter y setter
-
+    // ==================== MÉTODOS DE ACCESO (GETTERS/SETTERS) ====================
 
     public int getJob_offer_id() {
         return job_offer_id;
@@ -56,7 +61,7 @@ public class JobOffer {
     }
 
 
-    //Constructores
+    // ==================== CONSTRUCTORES ====================
 
     public JobOffer(){
 
@@ -70,7 +75,7 @@ public class JobOffer {
         this.location = location;
     }
 
-    //Metodos
+    // ==================== METODOS ====================
 
 
     @Override
@@ -84,6 +89,11 @@ public class JobOffer {
                 '}';
     }
 
+    /**
+     * Convierte una lista de ofertas a formato JSON
+     * @param listOffers Lista de ofertas de trabajo
+     * @return Cadena JSON con la lista de ofertas
+     */
     public static String toArrayJson(ArrayList<JobOffer> listOffers) {
 
         GsonBuilder builder = new GsonBuilder();

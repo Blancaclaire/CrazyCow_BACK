@@ -2,46 +2,82 @@ package Model.MotorMySql;
 
 import java.sql.*;
 
+/**
+ * Implementación concreta de IMotorSql para MySQL.
+ * Gestiona la conexión y ejecución de operaciones con la base de datos MySQL.
+ */
+
 public class MotorSql implements IMotorSql{
 
+
+    // ==================== CONSTANTES DE CONEXIÓN ====================
+
+    /** Driver JDBC para MySQL */
     private static  final String DRIVER_NAME = "com.mysql.cj.jdbc.Driver";
+
+    /** URL de conexión a la base de datos */
     private  static final String MYSQL_URL = "jdbc:mysql://db.cnfp5sduwtx2.us-east-1.rds.amazonaws.com:3306/CCdb";
+
+    /** Usuario para autenticación */
     private static final String MYSQL_USER ="HR";
+
+    /** Contraseña para autenticación */
     private static final String MYSQL_PASS = "Cambiame2025";
 
-    private Connection m_Connection; //Se usa para hacer la conexion con la base de datos
-    private Statement m_Statement; //Se usa para ejecutar sentencias en la base de datos desde el servidor
-    private PreparedStatement m_PrepareStatement; //Se usa para ejecutar sentencias con parametros
-    private ResultSet m_ResultSet; //Almacena los datos resultao de la ejecucion de la sentencia en la bbdd
 
-    //PreparedStatement evita las inyecciones de SQL porque los parámetros se envian por separado y no se conectan directamente dentrod e la consulat
+    // ==================== ATRIBUTOS DE CONEXIÓN ====================
+
+    /** Objeto Connection para la conexión con la BD */
+    private Connection m_Connection;
+
+    /** Objeto Statement para ejecutar consultas estáticas */
+    private Statement m_Statement;
+
+    /** Objeto PreparedStatement para consultas parametrizadas */
+    private PreparedStatement m_PrepareStatement;
+
+    /** Objeto ResultSet para almacenar resultados de consultas */
+    private ResultSet m_ResultSet;
 
 
-    //Conecta con la base de datos
+
+    // ==================== MÉTODOS DE CONEXIÓN ====================
+
+    /**
+     * Establece conexión con la base de datos MySQL.
+     * Carga el driver JDBC y crea los objetos Statement necesarios.
+     *
+     * @throws RuntimeException Si no puede cargar el driver JDBC
+     */
+
     @Override
     public void connect() {
         try{
-            Class.forName(DRIVER_NAME); //Carga el driver JDBC de mysql
+            Class.forName(DRIVER_NAME);
 
-            m_Connection= DriverManager.getConnection(MYSQL_URL,MYSQL_USER,MYSQL_PASS); //establece la conexion con la base de datos
-            m_Statement = m_Connection.createStatement(); //Se crea un Statement para ejectar sentencias en la base de datos
+            m_Connection= DriverManager.getConnection(MYSQL_URL,MYSQL_USER,MYSQL_PASS);
+            m_Statement = m_Connection.createStatement();
         }
-        //Se ejecuta cuando la clase(Class.forName() es incorrecto,
-        //Cuando el archivo .class correspondiente no esta en classpath
-        //Si el driver JDBC no está disponible cuandp se intenta cargar
+
         catch (ClassNotFoundException e){
             throw new RuntimeException();
         }
-        //Se ejecuta si los datos de acceso son incorrectos o el servidor no esta disponible
-        //Problemas con  la sintaxis sql o violaciones de restricciones
-        //Si el driver no esta correctamente configurado o es incompatible
         catch (SQLException sqlEx)
         {
             System.out.println(sqlEx.getMessage());
         }
     }
 
-    //Guarda el prepareStatement y llama a execute
+
+    // ==================== MÉTODOS DE EJECUCIÓN ====================
+
+
+    /**
+     * Ejecuta un PreparedStatement previamente configurado.
+     *
+     * @param stmt PreparedStatement a ejecutar
+     * @return true si la ejecución devuelve un ResultSet, false si es un conteo de filas
+     */
     @Override
     public boolean execute(PreparedStatement stmt)
     {
@@ -49,7 +85,12 @@ public class MotorSql implements IMotorSql{
         return execute();
     }
 
-//Si el prepared Statement esta definido lo ejecuta
+
+    /**
+     * Ejecuta el PreparedStatement almacenado.
+     *
+     * @return true si la ejecución devuelve un ResultSet, false si es un conteo de filas
+     */
     @Override
     public boolean execute() {
 
@@ -68,25 +109,13 @@ public class MotorSql implements IMotorSql{
         return bret;
     }
 
-    //la anterior al prepareStatement
-    /*
-    @Override
-    public boolean execute(String sql) {
-        boolean bRet = false;
-        try{
-            bRet = m_Statement.execute(sql);
-        }
-        catch (SQLException sqlEx)
-        {
-            System.out.println(sqlEx.getMessage());
 
-        }
-        return bRet;
-    }*/
-
-
-
-    //Ejecuta la sentencia e tipo SELECT y obtiene los resultados de la base de datos
+    /**
+     * Ejecuta una consulta SQL de tipo SELECT.
+     *
+     * @param sql Consulta SQL a ejecutar
+     * @return ResultSet con los resultados o null si hay error
+     */
     @Override
     public ResultSet executeQuery(String sql) {
         try{
@@ -101,8 +130,33 @@ public class MotorSql implements IMotorSql{
         return m_ResultSet;
     }
 
-    //Cierra las conexiones con la base de datos
-    //Comprueba que los objetos de conexion con la base de datos siguen abiertos para cerrarlos
+
+    /**
+     * Ejecuta una operación de actualización (INSERT, UPDATE, DELETE).
+     *
+     * @param stmt PreparedStatement con la operación
+     * @return Número de filas afectadas
+     */
+    @Override
+    public int executeUpdate(PreparedStatement stmt) {
+        int filasAfectadas =0;
+        try
+        {
+            filasAfectadas =stmt.executeUpdate();
+        }
+        catch (SQLException sqlEx){
+            System.out.println("Error en executeUpdate:" + sqlEx.getMessage());
+        }
+        return filasAfectadas;
+    }
+
+    // ==================== MÉTODOS DE GESTIÓN ====================
+
+    /**
+     * Cierra todos los recursos de conexión de forma segura.
+     * Verifica que cada recurso no sea nulo y esté abierto antes de cerrarlo.
+     */
+
     @Override
     public void disconnect() {
         try{
@@ -120,23 +174,24 @@ public class MotorSql implements IMotorSql{
         }
     }
 
-    @Override
-    public int executeUpdate(PreparedStatement stmt) {
-        int filasAfectadas =0;
-        try
-        {
-            filasAfectadas =stmt.executeUpdate(); //metodo predefinido que incluye java cuando  creas un PrepareStatement
-        }
-        catch (SQLException sqlEx){
-            System.out.println("Error en executeUpdate:" + sqlEx.getMessage());
-        }
-        return filasAfectadas;
-    }
+    // ==================== GETTERS/SETTERS ====================
+
+    /**
+     * Obtiene la conexión activa.
+     *
+     * @return Objeto Connection actual
+     */
 
     public  Connection getConnection(){
 
         return m_Connection;
     }
+
+    /**
+     * Establece el PreparedStatement para ejecuciones posteriores.
+     *
+     * @param st PreparedStatement a almacenar
+     */
 
     //funciona como un setter
     @Override

@@ -8,6 +8,7 @@ import java.util.Date;
 
 public class Applicant {
 
+    // ==================== ATRIBUTOS ====================
     private int applicant_id;
     private String name;
     private String surname;
@@ -19,7 +20,7 @@ public class Applicant {
 
     private int job_offer_id;
 
-    //Getter y Setter
+    // ==================== MÉTODOS DE ACCESO (GETTERS/SETTERS) ====================
 
     public int getApplicant_id() {
         return applicant_id;
@@ -93,7 +94,7 @@ public class Applicant {
         this.job_offer_id = job_offer_id;
     }
 
-    //Constructores
+    // ==================== CONSTRUCTORES ====================
 
     public Applicant(){
 
@@ -133,9 +134,8 @@ public class Applicant {
         this.job_title = job_title;
     }
 
-    //metodos
 
-
+    // ==================== METODOS ====================
 
     @Override
     public String toString() {

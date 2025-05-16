@@ -8,6 +8,11 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
+/**
+ * Clase DAO (Data Access Object) que gestiona las operaciones de base de datos
+ * relacionadas con los detalles de un pedido (OrderDetail).
+ * Implementa la interfaz IDao para garantizar consistencia en los métodos CRUD.
+ */
 public class OrderDetailDao implements IDao{
 
 
@@ -16,11 +21,18 @@ public class OrderDetailDao implements IDao{
 
     private IMotorSql motorSql;
 
+    /** Constructor: Inicializa el motor de base de datos. */
     public OrderDetailDao(){
         motorSql= new MotorSql();
     }
 
 
+    /**
+     * Método para agregar un nuevo detalle de pedido a la base de datos.
+     *
+     * @param bean Objeto de tipo OrderDetail que contiene los datos del detalle.
+     * @return Número de filas afectadas (0 si falla, 1 si éxito).
+     */
     @Override
     public int add(Object bean) {
         int filas =0;

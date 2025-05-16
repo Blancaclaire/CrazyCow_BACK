@@ -1,17 +1,20 @@
 package Model.Entities;
-
 import Model.DAO.IngredientDao;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-
 import java.util.ArrayList;
 
 
-
+/**
+ * Clase que representa un producto en el sistema.
+ * Contiene información básica del producto, sus ingredientes y alérgenos asociados.
+ * Proporciona métodos para conversión a JSON tanto manual como usando la librería Gson.
+ */
 
 public class Product {
 
-    //Atributos
+    // ==================== ATRIBUTOS ====================
+
     private int product_id;
     private int category_id;
     private String product_name;
@@ -24,14 +27,14 @@ public class Product {
 
 
 
-    //Getters y setters
 
+    // ==================== MÉTODOS DE ACCESO (GETTERS/SETTERS) ====================
 
     public int getProduct_id() {
         return product_id;
     }
 
-    //como no estan dentro del mismo paquete no puede verse si no es public por ProductAction
+
     public void setProduct_id(int p_product_id) {
         product_id = p_product_id;
     }
@@ -40,7 +43,7 @@ public class Product {
         return category_id;
     }
 
-    //como no estan dentro del mismo paquete no puede verse si no es public por ProductAction
+
     public void setCategory_id(int p_category_id) {
         category_id = p_category_id;
     }
@@ -93,7 +96,8 @@ public class Product {
         this.listAllergen = listAllergen;
     }
 
-    //Constructor
+
+    // ==================== CONSTRUCTORES ====================
 
     public Product() {
 
@@ -109,6 +113,8 @@ public class Product {
         setImage(image);
 
     }
+
+    // ==================== METODOS ====================
 
 
 
@@ -126,7 +132,12 @@ public class Product {
 
 
 
-    //Transforma un arrayList de Productos y los transforma en datos de tipo cadena con formato JSON de manera manual
+    /**
+     * Convierte una lista de productos a formato JSON manualmente.
+     *
+     * @param listProducts Lista de productos a convertir
+     * @return Cadena en formato JSON que representa la lista de productos
+     */
     public  String fromArrayToJson(ArrayList<Product> listProducts) {
 
         String resp = "[";
@@ -146,22 +157,33 @@ public class Product {
         return resp;
     }
 
-    //Transforma un arrayList de Productos y los transforma en datos de tipo cadena con formato JSON usando la libreria Gson
+    /**
+     * Convierte una lista de productos a formato JSON usando la librería Gson.
+     *
+     * @param listProducts Lista de productos a convertir
+     * @return Cadena en formato JSON bien formateada
+     */
     public static String toArrayJson(ArrayList<Product> listProducts) {
 
         //GsonBuilder permite configurar gson
         //Permite activar pretty printing, excluir campos null, cambiar nombres de campos, etc.
         GsonBuilder builder = new GsonBuilder();
-        builder.setPrettyPrinting();
+        builder.setPrettyPrinting();// Formato JSON más legible
 
         Gson gson = builder.create();
         String resp = gson.toJson(listProducts);
         return resp;
     }
 
+    /**
+     * Convierte un solo producto a formato JSON usando la librería Gson.
+     *
+     * @param product Producto a convertir
+     * @return Cadena en formato JSON que representa el producto
+     */
     public static String toJson(Product product) {
         GsonBuilder builder = new GsonBuilder();
-        builder.setPrettyPrinting(); // Formato JSON más legible
+        builder.setPrettyPrinting();
         Gson gson = builder.create();
         return gson.toJson(product);
     }

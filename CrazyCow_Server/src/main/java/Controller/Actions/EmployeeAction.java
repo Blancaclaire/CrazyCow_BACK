@@ -10,6 +10,10 @@ import javax.servlet.http.HttpServletResponse;
 import java.util.ArrayList;
 import java.util.Map;
 
+/**
+ * Controlador para gestionar operaciones relacionadas con empleados.
+ * Implementa las acciones de autenticación y consulta de empleados.
+ */
 public class EmployeeAction implements  IAction{
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response, String action, Map<String, String[]> objectParams) {
@@ -37,6 +41,13 @@ public class EmployeeAction implements  IAction{
         return strReturn;
     }
 
+    /**
+     * Obtiene lista de empleados con filtros opcionales.
+     * @param objectParams Puede contener:
+     *        - email: filtro por correo electrónico
+     *        - job_id: filtro por ID de puesto
+     * @return JSON con lista de empleados
+     */
     public String findAll(Map<String, String[]>objectParams){
         String strReturn = "";
         EmployeeDao employeeDao = new EmployeeDao();
@@ -60,6 +71,13 @@ public class EmployeeAction implements  IAction{
         return strReturn;
     }
 
+    /**
+     * Autentica un empleado.
+     * @param objectParams Debe contener:
+     *        - email: correo del empleado
+     *        - password: contraseña
+     * @return "OK" si éxito, "NO" si falla
+     */
     public String authenticate(Map<String, String[]>objectParams){
         String strReturn="";
 

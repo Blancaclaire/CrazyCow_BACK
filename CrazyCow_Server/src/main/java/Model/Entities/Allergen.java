@@ -2,15 +2,22 @@ package Model.Entities;
 
 import java.util.ArrayList;
 
+/**
+ * Clase que representa un alérgeno en el sistema.
+ * Contiene información básica sobre un alérgeno que puede estar presente en los productos.
+ */
 public class Allergen {
+
+    // ==================== ATRIBUTOS ====================
+
     private int allergen_id;
     private String name;
-
-    //private ArrayList<Ingredient> listIngredients = new ArrayList<Ingredient>();
-
     public int getAllergen_id() {
         return allergen_id;
     }
+
+
+    // ==================== MÉTODOS DE ACCESO (GETTERS/SETTERS) ====================
 
     private void setAllergen_id(int _allergen_id) {
         allergen_id = _allergen_id;
@@ -25,7 +32,7 @@ public class Allergen {
     }
 
 
-    //Constructor
+    // ==================== CONSTRUCTORES ====================
 
     public Allergen(int allergen_id, String name){
         setAllergen_id(allergen_id);
@@ -36,6 +43,8 @@ public class Allergen {
 
     }
 
+
+    // ==================== METODOS ====================
 
     @Override
     public String toString() {

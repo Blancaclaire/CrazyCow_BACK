@@ -3,14 +3,20 @@ package Model.Entities;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
+/**
+ * Clase que representa un detalle de pedido en el sistema.
+ * Contiene información sobre los productos específicos que forman parte de un pedido
+ * y la cantidad solicitada de cada uno.
+ */
 public class OrderDetail {
 
+    // ==================== ATRIBUTOS ====================
 
     private int order_id;
     private int product_id;
     private int quantity;
 
-    //Getter and setter
+    // ==================== MÉTODOS DE ACCESO (GETTERS/SETTERS) ====================
 
     public int getOrder_id() {
         return order_id;
@@ -36,7 +42,7 @@ public class OrderDetail {
         this.quantity = quantity;
     }
 
-    //Constructores
+    // ==================== CONSTRUCTORES ====================
 
     public OrderDetail(){
 
@@ -55,7 +61,7 @@ public class OrderDetail {
     }
 
 
-    //Metodos
+    // ==================== METODOS ====================
 
 
     @Override
@@ -67,6 +73,11 @@ public class OrderDetail {
                 '}';
     }
 
+    /**
+     * Convierte un detalle de pedido a formato JSON
+     * @param orderDetail Detalle a convertir
+     * @return Cadena JSON con la representación del detalle
+     */
     public static String toJson(OrderDetail orderDetail) {
         GsonBuilder builder = new GsonBuilder();
         builder.setPrettyPrinting();

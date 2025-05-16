@@ -11,15 +11,25 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
+/**
+ * Implementación del DAO para gestionar ingredientes en el sistema.
+ * Proporciona operaciones para buscar ingredientes asociados a productos.
+ */
 public class IngredientDao implements IDao {
 
-
+    // Consulta SQL para encontrar ingredientes por producto
     private final String SQL_FIND_BY_PRODUCT = "SELECT ING.ingredient_id, ING.ingredient_name FROM INGREDIENTS ING inner join INGREDIENTS_PRODUCTS IP ON ING.ingredient_id=IP.ingredient_id inner join PRODUCTS PRO ON PRO.product_id=IP.product_id  where PRO.product_id=? ";
     private IMotorSql motorSql;
 
+    /**
+     * Constructor que inicializa el motor de base de datos.
+     */
     public IngredientDao() {
         motorSql = new MotorSql();
     }
+
+
+    // ==================== MÉTODOS CRUD ====================
 
     @Override
     public int add(Object bean) {
@@ -36,6 +46,11 @@ public class IngredientDao implements IDao {
         return 0;
     }
 
+    /**
+     * Busca todos los ingredientes asociados a un producto específico.
+     * @param bean Producto del que se quieren obtener los ingredientes (debe ser de tipo Product)
+     * @return ArrayList de objetos Ingredient asociados al producto
+     */
     @Override
     public ArrayList findAll(Object bean) {
 

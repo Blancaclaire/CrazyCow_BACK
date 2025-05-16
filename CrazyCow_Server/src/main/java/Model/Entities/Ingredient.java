@@ -5,11 +5,19 @@ import com.google.gson.GsonBuilder;
 
 import java.util.ArrayList;
 
+/**
+ * Clase que representa un ingrediente en el sistema.
+ * Contiene información básica sobre los ingredientes utilizados en los productos.
+ */
 public class Ingredient {
+
+    // ==================== ATRIBUTOS ====================
+
     private int ingredient_id;
     private String name;
 
-    //private ArrayList<Allergen> listAllergen = new ArrayList<Allergen>();
+
+    // ==================== MÉTODOS DE ACCESO (GETTERS/SETTERS) ====================
 
     public int get_ingredient_id() {
         return ingredient_id;
@@ -27,7 +35,8 @@ public class Ingredient {
         name = _name;
     }
 
-    //Constructor
+    // ==================== CONSTRUCTORES ====================
+
     public Ingredient(int ingredient_id,String name){
         set_ingredient_id(ingredient_id);
         setName(name);
@@ -37,6 +46,8 @@ public class Ingredient {
 
     }
 
+    // ==================== METODOS ====================
+
     @Override
     public String toString() {
         return "Ingredient{" +
@@ -45,10 +56,14 @@ public class Ingredient {
                 '}';
     }
 
+    /**
+     * Convierte una lista de ingredientes a formato JSON usando la librería Gson.
+     * @param listIngredients Lista de ingredientes a convertir
+     * @return Cadena en formato JSON que representa la lista de ingredientes
+     */
+
     public static String toArrayJson(ArrayList<Ingredient> listIngredients) {
 
-        //GsonBuilder permite configurar gson
-        //Permite activar pretty printing, excluir campos null, cambiar nombres de campos, etc.
         GsonBuilder builder = new GsonBuilder();
         builder.setPrettyPrinting();
 

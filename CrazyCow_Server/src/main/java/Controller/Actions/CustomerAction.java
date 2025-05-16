@@ -10,6 +10,10 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Map;
 
+/**
+ * Clase que implementa IAction para gestionar operaciones de clientes (Customer).
+ * Maneja registro, autenticación y consultas de clientes.
+ */
 public class CustomerAction implements IAction{
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response, String action, Map<String, String[]> objectParams) {
@@ -45,6 +49,9 @@ public class CustomerAction implements IAction{
         return strReturn;
     }
 
+    /**
+     * Obtiene todos los clientes en formato JSON.
+     */
     public String findAll(){
         String strReturn ="";
         CustomerDao customerDao = new CustomerDao();
@@ -55,6 +62,10 @@ public class CustomerAction implements IAction{
         return Customer.toArrayJson(listCustomer);
     }
 
+    /**
+     * Busca un cliente por ID.
+     * @param objectParams Debe contener customer_id
+     */
     public  String findById(Map<String, String[]>objectParams){
         String strReturn="";
         CustomerDao customerDao = new CustomerDao();
@@ -71,7 +82,10 @@ public class CustomerAction implements IAction{
         return strReturn;
     }
 
-
+    /**
+     * Autentica un cliente con email y password.
+     * @param objectParams Debe contener email y password
+     */
     public String authenticate(Map<String, String[]>objectParams){
         String strReturn= "";
 
@@ -104,7 +118,10 @@ public class CustomerAction implements IAction{
 
     }
 
-
+    /**
+     * Registra un nuevo cliente.
+     * @param objectParams Debe contener todos los campos obligatorios
+     */
     public String register (Map<String, String[]>objectParams){
         String strReturn = "";
         CustomerDao customerDao = new CustomerDao();

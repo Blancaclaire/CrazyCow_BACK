@@ -6,8 +6,13 @@ import com.google.gson.GsonBuilder;
 import java.util.ArrayList;
 import java.util.Date;
 
+/**
+ * Clase que representa a un empleado en el sistema.
+ * Contiene informacion personal, laboral y del empleado.
+ */
 public class Employee {
 
+    // ==================== ATRIBUTOS ====================
     private int employee_id;
     private int manager_id;
     private int job_id;
@@ -21,11 +26,9 @@ public class Employee {
     private String password;
     private String address;
     private Date start_date;
-
-
     private String city;
 
-    //Getter and setter
+    // ==================== MÉTODOS DE ACCESO (GETTERS/SETTERS) ====================
 
 
     public int getEmployee_id() {
@@ -141,7 +144,7 @@ public class Employee {
     }
 
 
-    //Constructores
+    // ==================== CONSTRUCTORES ====================
 
     public Employee(){
 
@@ -177,7 +180,7 @@ public class Employee {
         this.start_date = start_date;
     }
 
-    //Metodos
+    // ==================== METODOS ====================
 
 
     @Override
@@ -199,6 +202,12 @@ public class Employee {
                 '}';
     }
 
+    /**
+     * Convierte una lista de empleados a formato JSON usando la librería Gson.
+     *
+     * @param listEmployees Lista de empleados a convertir
+     * @return Cadena en formato JSON que representa la lista de empleados
+     */
     public static String toArrayJson(ArrayList<Employee> listEmployees) {
 
         GsonBuilder builder = new GsonBuilder();

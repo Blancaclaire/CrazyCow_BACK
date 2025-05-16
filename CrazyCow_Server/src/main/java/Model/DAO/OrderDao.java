@@ -12,6 +12,11 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 
+/**
+ * Clase DAO (Data Access Object) que gestiona las operaciones de base de datos
+ * relacionadas con pedidos (Orders), incluyendo sus detalles y pagos asociados.
+ * Implementa la interfaz IDao para garantizar consistencia en los métodos CRUD.
+ */
 public class OrderDao implements IDao {
 
     private final String SQL_FIND_ALL = "SELECT * FROM ORDERS WHERE 1=1";
@@ -21,12 +26,17 @@ public class OrderDao implements IDao {
 
     private IMotorSql motorSql;
 
-
+    /** Constructor: Inicializa el motor de base de datos. */
     public OrderDao() {
         motorSql = new MotorSql();
     }
 
-
+    /**
+     * Metodo para agregar un nuevo pedido a la base de datos, incluyendo sus detalles y pago.
+     *
+     * @param bean Objeto de tipo Order que contiene los datos del pedido.
+     * @return Número de filas afectadas (0 si falla, 1+ si éxito).
+     */
     public int add(Object bean) {
         int filas = 0;
         ResultSet rs = null;
@@ -38,11 +48,11 @@ public class OrderDao implements IDao {
             Order order = (Order) bean;
 
             try {
-                // 1. Conectar y desactivar autocommit
+                // Conectar y desactivar autocommit
                 motorSql.connect();
                 motorSql.getConnection().setAutoCommit(false);
 
-                // 2. Insertar la orden principal
+                // Insertar la orden principal
                 psOrder = motorSql.getConnection().prepareStatement(
                         SQL_INSERT_ORDER, Statement.RETURN_GENERATED_KEYS);
 
@@ -54,14 +64,14 @@ public class OrderDao implements IDao {
 
                 filas = psOrder.executeUpdate();
 
-                // 3. Obtener el ID generado
+                // Obtener el ID generado
                 rs = psOrder.getGeneratedKeys();
                 int orderId = -1;
                 if (rs.next()) {
                     orderId = rs.getInt(1);
                 }
 
-                // 4. Insertar los detalles directamente aquí (solución sencilla)
+                //  Insertar los detalles directamente aquí (solución sencilla)
                 if (orderId != -1 && order.getOrder_details() != null) {
                     psDetails = motorSql.getConnection().prepareStatement(
                             "INSERT INTO PRODUCTS_ORDER (order_id, product_id, quantity) VALUES (?,?,?)");
@@ -70,13 +80,13 @@ public class OrderDao implements IDao {
                         psDetails.setInt(1, orderId);
                         psDetails.setInt(2, detail.getProduct_id());
                         psDetails.setInt(3, detail.getQuantity());
-                        psDetails.addBatch(); // Agregar al batch para mejor performance
+                        psDetails.addBatch();//Agrupa inserts para mejorar el rendimiento
                     }
 
                     psDetails.executeBatch(); // Ejecutar todos los inserts juntos
                 }
 
-                // 5. Insertar el pago si existe
+                //  Insertar el pago si existe
                 if (order.getPayment() != null && orderId != -1) {
                     String sqlPayment = "INSERT INTO PAYMENTS (order_id, holder_name, holder_number, cvv, card_type, price) " +
                             "VALUES (?, ?, ?, ?, ?, ?)";
@@ -107,6 +117,7 @@ public class OrderDao implements IDao {
                 motorSql.getConnection().commit();
 
             } catch (SQLException e) {
+                // Manejo de errores: Rollback en caso de fallo
                 try {
                     if (motorSql.getConnection() != null) {
                         motorSql.getConnection().rollback();
@@ -152,7 +163,12 @@ public class OrderDao implements IDao {
     }
 
 
-
+    /**
+     * Metodo para buscar pedidos en la base de datos, con opción de filtrado por restaurante.
+     *
+     * @param bean Objeto Order que puede contener filtros (ej: restaurant_id).
+     * @return ArrayList<Order> con todos los pedidos encontrados (incluyendo detalles).
+     */
     public ArrayList findAll(Object bean) {
         ArrayList<Order> listOrders = new ArrayList<Order>();
         ResultSet rsOrder = null;

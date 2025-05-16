@@ -12,36 +12,55 @@ import java.io.PrintWriter;
 import java.sql.SQLException;
 import java.util.Map;
 
-//Definicion del servlet
+/**
+ * Servlet principal que actúa como controlador de la aplicación.
+ * Maneja todas las solicitudes HTTP y las redirige a las acciones correspondientes.
+ * Implementa la interfaz IController para garantizar la estructura requerida.
+ */
+
 @WebServlet(name = "Controller", urlPatterns = {"/Controller"})
 
 
-//la clase maneja solicitudes HTTP
 public class Controller extends HttpServlet implements IController {
-    //Metodo para procesar la peticion HTTP(request)
+
+    /**
+     * Procesa todas las solicitudes HTTP entrantes.
+     * Configura CORS, determina la acción solicitada y delega la ejecución al Action correspondiente.
+     *
+     * @param request Objeto HttpServletRequest con los datos de la solicitud
+     * @param response Objeto HttpServletResponse para preparar la respuesta
+     * @throws ServletException Si ocurre un error en el servlet
+     * @throws IOException Si ocurre un error de entrada/salida
+     */
+
     @Override
     public void processRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        response.setContentType("text/plain;charset=UTF-8"); //Establece el tipo de contenido
-        //Se configura los encabezados CORS para permitir que otros clientes (JavaScript) hagan solicitudes al servidor
+        // Configuración básica de la respuesta
+        response.setContentType("text/plain;charset=UTF-8");
 
+
+        // Configuración de cabeceras CORS para permitir peticiones desde cualquier origen (*)
+        // y métodos HTTP especificados
         response.setHeader("Access-Control-Allow-Origin", "*");
         response.setHeader("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
         response.setHeader("Access-Control-Allow-Headers", "Content-Type, Authorization");
         response.setHeader("Access-Control-Max-Age", "3600");
 
-        //PrintWriter es una clase de java que se usa para escribir texto  en salida de datos
-        //out se convierte en un objeto PrintWriter que usaremos para escribir datos en la respuesta;
 
         PrintWriter out = response.getWriter();
-        String strAction = request.getParameter("ACTION");//Captura un parámetro de la URL llamado ACTION
-        String[] arrayAction = new String[2]; //Guarda los parametros de la accion
+
+        // Obtiene el parámetro ACTION que define qué operación realizar
+        String strAction = request.getParameter("ACTION");
+        String[] arrayAction = new String[2]; // [0] = Entidad, [1] = Operación
         Map<String, String[]> objectParams = request.getParameterMap();
+
+        // Si existe acción, la separamos en entidad.operación (ej: "PRODUCT.FIND_ALL")
         if (strAction != "") {
-            arrayAction = strAction.split("\\."); //Divide el parametro en dos partes por un (.)
+            arrayAction = strAction.split("\\.");
         }
 
-
+        // Router principal: delega la ejecución al Action correspondiente
         switch (arrayAction[0].toUpperCase()) {
             case "PRODUCT": {
                 out.print(new ProductAction().execute(request, response, arrayAction[1], objectParams));
@@ -77,7 +96,15 @@ public class Controller extends HttpServlet implements IController {
 
     }
 
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+    // ========== MÉTODOS HTTP ========== //
+
+    /**
+     * Maneja las solicitudes GET.
+     * Delega el procesamiento al método processRequest centralizado.
+     */
+    @Override
+    public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         try {
             processRequest(request, response);
         }
@@ -87,7 +114,12 @@ public class Controller extends HttpServlet implements IController {
 
     }
 
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    /**
+     * Maneja las solicitudes POST.
+     * Delega el procesamiento al método processRequest centralizado.
+     */
+    @Override
+    public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         try {
             processRequest(request, response);
         }
@@ -96,7 +128,13 @@ public class Controller extends HttpServlet implements IController {
         }
 
     }
-    protected void doPut(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+    /**
+     * Maneja las solicitudes PUT.
+     * Delega el procesamiento al método processRequest centralizado.
+     */
+    @Override
+    public void doPut(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         try {
             processRequest(request, response);
         }
@@ -106,7 +144,12 @@ public class Controller extends HttpServlet implements IController {
 
     }
 
-    protected void doDelete(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    /**
+     * Maneja las solicitudes DELETE.
+     * Delega el procesamiento al método processRequest centralizado.
+     */
+    @Override
+    public void doDelete(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         try {
             processRequest(request, response);
         }

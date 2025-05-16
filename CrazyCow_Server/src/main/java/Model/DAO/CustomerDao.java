@@ -10,8 +10,15 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
+/**
+ * Implementación del DAO para gestionar clientes en el sistema.
+ * Proporciona operaciones CRUD para la entidad Customer,
+ * incluyendo autenticación y búsquedas específicas.
+ */
 public class CustomerDao implements IDao {
 
+
+    // Consultas SQL preparadas
     private final String SQL_LOGIN = "SELECT * FROM CUSTOMERS WHERE email = ? and password = ? ";
     private final String SQL_ADD_CUSTOMER = "INSERT INTO CUSTOMERS (name, surname, email, phone_number, user_name, password, address) VALUES (?,?,?,?,?,?,?)";
     private final String SQL_FIND_ALL = "SELECT * FROM CUSTOMERS WHERE 1=1";
@@ -20,11 +27,21 @@ public class CustomerDao implements IDao {
     private IMotorSql motorSql;
 
 
+    /**
+     * Constructor que inicializa el motor de base de datos.
+     */
     public CustomerDao() {
         motorSql = new MotorSql();
     }
 
 
+    // ==================== MÉTODOS DE AUTENTICACIÓN ====================
+
+    /**
+     * Autentica un cliente mediante email y contraseña.
+     * @param bean Objeto Customer con credenciales
+     * @return true si las credenciales son válidas, false en caso contrario
+     */
     public boolean authenticate(Object bean) {
         boolean isUser = false;
         PreparedStatement ps = null;
@@ -51,7 +68,13 @@ public class CustomerDao implements IDao {
     }
 
 
-    //metodos de la interfaz
+    // ==================== MÉTODOS CRUD ====================
+
+    /**
+     * Registra un nuevo cliente en el sistema.
+     * @param bean Objeto Customer con los datos del cliente
+     * @return Número de filas afectadas (1 si éxito, 0 si fallo)
+     */
 
     @Override
     public int add(Object bean) {
@@ -90,6 +113,12 @@ public class CustomerDao implements IDao {
         return filas;
     }
 
+
+    /**
+     * Busca un cliente por su ID.
+     * @param customerId ID del cliente a buscar
+     * @return Objeto Customer encontrado o null si no existe
+     */
     public Customer findById(int customerId) {
         Customer customer =null;
         PreparedStatement ps = null;
@@ -134,6 +163,13 @@ public class CustomerDao implements IDao {
     public int update(Object bean) {
         return 0;
     }
+
+
+    /**
+     * Obtiene todos los clientes registrados.
+     * @param bean Parámetro no utilizado (por compatibilidad con interfaz)
+     * @return ArrayList de objetos Customer
+     */
 
     public ArrayList findAll(Object bean) {
 

@@ -5,8 +5,13 @@ import com.google.gson.GsonBuilder;
 
 import java.util.ArrayList;
 
+/**
+ * Clase que representa a un cliente en el sistema.
+ * Contiene información personal, de contacto y credenciales de acceso.
+ */
 public class Customer {
 
+    // ==================== ATRIBUTOS ====================
     private int customer_id;
     private String name;
     private String surname;
@@ -17,8 +22,7 @@ public class Customer {
     private String address;
 
 
-    //Getter y setter
-
+    // ==================== MÉTODOS DE ACCESO (GETTERS/SETTERS) ====================
 
     public int getCustomer_id() {
         return customer_id;
@@ -84,7 +88,7 @@ public class Customer {
         address = _address;
     }
 
-    //Constructor
+    // ==================== CONSTRUCTORES ====================
 
     public Customer() {
 
@@ -101,6 +105,9 @@ public class Customer {
         setAddress(address);
     }
 
+
+    // ==================== METODOS ====================
+
     @Override
     public String toString() {
         return "Customer{" +
@@ -115,6 +122,12 @@ public class Customer {
                 '}';
     }
 
+    /**
+     * Convierte una lista de clientes a formato JSON usando la librería Gson.
+     *
+     * @param listCustomer Lista de clientes a convertir
+     * @return Cadena en formato JSON que representa la lista de clientes
+     */
     public static String toArrayJson(ArrayList<Customer> listCustomer) {
 
         GsonBuilder builder = new GsonBuilder();
@@ -125,6 +138,12 @@ public class Customer {
         return resp;
     }
 
+    /**
+     * Convierte un solo cliente a formato JSON usando la librería Gson.
+     *
+     * @param customer Cliente a convertir
+     * @return Cadena en formato JSON que representa el cliente
+     */
     public static String toJson(Customer customer) {
         GsonBuilder builder = new GsonBuilder();
         builder.setPrettyPrinting();

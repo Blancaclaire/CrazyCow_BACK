@@ -9,7 +9,21 @@ import javax.servlet.http.HttpServletResponse;
 import java.util.ArrayList;
 import java.util.Map;
 
+/**
+ * Clase que implementa las acciones relacionadas con productos.
+ * Gestiona las operaciones CRUD a través de peticiones HTTP.
+ */
 public class ProductAction implements IAction {
+
+    /**
+     * Ejecuta la acción solicitada para productos.
+     *
+     * @param request Objeto HttpServletRequest con los datos de la petición
+     * @param response Objeto HttpServletResponse para la respuesta
+     * @param action Acción a ejecutar (ADD, UPDATE, DELETE, FIND_ALL, FIND_BY_ID)
+     * @param objectParams Mapa de parámetros recibidos en la petición
+     * @return String con el resultado de la operación en formato JSON o mensaje de estado
+     */
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response, String action, Map<String, String[]> objectParams) {
         System.out.println("Valor recibido en action: " + action);
@@ -32,7 +46,6 @@ public class ProductAction implements IAction {
                 //http://localhost:8080/CrazyCow_Server/Controller?ACTION=PRODUCT.FIND_ALL&category_id=1001
                 strReturn = findAll(objectParams);
                 break;
-
             case "FIND_BY_ID":
                 //http://localhost:8080/CrazyCow_Server/Controller?ACTION=PRODUCT.FIND_BY_ID&product_id=8000
                 strReturn =findById(objectParams);
@@ -47,11 +60,20 @@ public class ProductAction implements IAction {
         return strReturn;
     }
 
+    // ==================== MÉTODOS PRIVADOS ====================
+
+    /**
+     * Obtiene todos los productos que coincidan con los filtros especificados.
+     *
+     * @param objectParams Mapa de parámetros con los filtros (product_id, category_id)
+     * @return String con la lista de productos en formato JSON
+     */
+
     private String findAll(Map<String, String[]> objectParams) {
         String strReturn = "";
         ProductDao proDao = new ProductDao(); //Se inicializa la conexion con la base de detos
 
-        // Crear un objeto `Product` para enviar como parámetro a `findAll(Object bean)`
+        // Crear un objeto Product para enviar como parámetro a `findAll(Object bean)`
         Product filtro = new Product();
 
         //Procesamos product_id
@@ -75,6 +97,12 @@ public class ProductAction implements IAction {
 
     }
 
+    /**
+     * Busca un producto por su ID.
+     *
+     * @param objectParams Mapa de parámetros que debe contener product_id
+     * @return String con el producto en formato JSON o mensaje de error
+     */
     private String findById(Map<String, String[]> objectParams) {
         String strReturn = "";
         ProductDao proDao = new ProductDao(); //Se inicializa la conexion con la base de detos
@@ -95,7 +123,12 @@ public class ProductAction implements IAction {
 
     }
 
-
+    /**
+     * Elimina un producto de la base de datos.
+     *
+     * @param objectParams Mapa de parámetros que debe contener product_id
+     * @return String con el resultado de la operación
+     */
     private String delete(Map<String, String[]> objectParams) {
         ProductDao prodao = new ProductDao();
 
@@ -119,6 +152,12 @@ public class ProductAction implements IAction {
 
     }
 
+    /**
+     * Añade un nuevo producto a la base de datos.
+     *
+     * @param objectParams Mapa de parámetros con los datos del producto
+     * @return String con el resultado de la operación
+     */
     private String add(Map<String, String[]> objectParams) {
         ProductDao proDao = new ProductDao();
         Product newProduct = new Product();
@@ -189,6 +228,13 @@ public class ProductAction implements IAction {
         return strReturn;
 
     }
+
+    /**
+     * Actualiza un producto existente.
+     *
+     * @param objectParams Mapa de parámetros con los datos a actualizar
+     * @return String con el resultado de la operación
+     */
 
     public String update(Map<String, String[]> objectParams){
         ProductDao proDao = new ProductDao();

@@ -9,7 +9,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.ArrayList;
 import java.util.Map;
-
+/**
+ * Controlador para gestionar operaciones relacionadas con ofertas de trabajo.
+ * Implementa las acciones de consulta de ofertas laborales.
+ */
 public class JobOfferAction implements IAction{
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response, String action, Map<String, String[]> objectParams) {
@@ -33,6 +36,12 @@ public class JobOfferAction implements IAction{
         return strReturn;
     }
 
+    /**
+     * Obtiene lista de ofertas laborales con filtro opcional por ID.
+     * @param objectParams Puede contener:
+     *        - job_offer_id: filtro por ID de oferta
+     * @return JSON con lista de ofertas laborales
+     */
     public  String findAll(Map<String, String[]>objectParams){
         String strReturn = "";
         JobOfferDao jobOfferDao = new JobOfferDao();

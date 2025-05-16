@@ -1,6 +1,16 @@
 package Model.Entities;
 
+/**
+ * Clase que representa un pago en el sistema.
+ * Contiene información sobre la transacción de pago asociada a un pedido,
+ * incluyendo datos de la tarjeta y monto pagado.
+ *
+ * Nota: En una aplicación real, los datos sensibles como número de tarjeta y CVV
+ * deberían manejarse con técnicas de encriptación y cumplir con estándares PCI DSS.
+ */
 public class Payment {
+
+    // ==================== ATRIBUTOS ====================
 
     private int payment_id;
     private int order_id;
@@ -9,6 +19,9 @@ public class Payment {
     private String cvv;
     private String card_type;
     private double price;
+
+
+    // ==================== MÉTODOS DE ACCESO (GETTERS/SETTERS) ====================
 
     public int getPayment_id() {
         return payment_id;
@@ -67,7 +80,7 @@ public class Payment {
     }
 
 
-    //Constructor
+    // ==================== CONSTRUCTORES ====================
 
     public Payment(){
 
@@ -89,6 +102,8 @@ public class Payment {
         this.card_type = card_type;
         this.price = price;
     }
+
+    // ==================== METODOS ====================
 
     @Override
     public String toString() {

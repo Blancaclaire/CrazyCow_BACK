@@ -9,18 +9,35 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
+/**
+ * Implementación del DAO para gestionar empleados en el sistema.
+ * Proporciona operaciones de autenticación y consulta para la entidad Employee.
+ */
 public class EmployeeDao implements IDao {
 
+    //Consultas SQL preparadas
     private String SQL_FIND_BY_EMAIL = "SELECT * FROM EMPLOYEES WHERE email=?";
     private String SQL_FIND_ALL = "SELECT * FROM EMPLOYEES WHERE 1=1";
-    private String SQL_LOGIN = "SELECT * FROM EMPLOYEES WHERE job_id=6003  and email = ? and password = ? "; //Solo se loguean los empleados cuyo job_id= IT/6003
+    private String SQL_LOGIN = "SELECT * FROM EMPLOYEES WHERE  email = ? and password = ? ";
     private IMotorSql motorSql;
 
 
+    /**
+     * Constructor que inicializa el motor de base de datos.
+     */
     public EmployeeDao() {
         motorSql = new MotorSql();
     }
 
+
+    // ==================== MÉTODOS DE AUTENTICACIÓN ====================
+
+    /**
+     * Autentica a cualquier empleado registrado en el sistema.
+     *
+     * @param bean Objeto Employee con credenciales (email y password)
+     * @return true si las credenciales son válidas para cualquier empleado, false en caso contrario
+     */
 
     public boolean authenticate(Object bean) {
         boolean isEmployee = false;
@@ -45,6 +62,9 @@ public class EmployeeDao implements IDao {
         return isEmployee;
     }
 
+
+    // ==================== MÉTODOS CRUD ====================
+
     @Override
     public int add(Object bean) {
         return 0;
@@ -60,6 +80,12 @@ public class EmployeeDao implements IDao {
         return 0;
     }
 
+    /**
+     * Obtiene empleados según criterios de búsqueda.
+     *
+     * @param bean Objeto Employee con los filtros de búsqueda (email, job_id)
+     * @return ArrayList de empleados que coinciden con los criterios
+     */
     @Override
     public ArrayList findAll(Object bean) {
         ArrayList listEmployees = new ArrayList<>();

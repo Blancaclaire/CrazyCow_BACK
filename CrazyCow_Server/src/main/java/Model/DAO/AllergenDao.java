@@ -10,20 +10,30 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
+/**
+ * Implementación del DAO para manejar operaciones con alérgenos en la base de datos.
+ * Proporciona métodos para buscar alérgenos asociados a productos.
+ */
 public class AllergenDao implements IDao {
 
 
+    // Consulta SQL para encontrar alérgenos por producto
     private final String SQL_FIND_BY_PRODUCT = "SELECT * FROM ALLERGENS AL inner join ALLERGEN_INGREDIENTS ALING on ALING.allergen_id=AL.allergen_id inner join INGREDIENTS ING on ING.ingredient_id=ALING.ingredient_id inner join INGREDIENTS_PRODUCTS IP ON ING.ingredient_id=IP.ingredient_id inner join PRODUCTS PRO ON PRO.product_id=IP.product_id where PRO.product_id= ? ";
+
     private IMotorSql motorSql;
 
 
-    //Constructor
+    /**
+     * Constructor que inicializa el motor de base de datos.
+     */
     public AllergenDao() {
         motorSql = new MotorSql();
     }
 
 
-    //Metodos
+    // ==================== MÉTODOS CRUD ====================
+
+
     @Override
     public int add(Object bean) {
         return 0;
@@ -39,6 +49,11 @@ public class AllergenDao implements IDao {
         return 0;
     }
 
+    /**
+     * Busca todos los alérgenos asociados a un producto específico.
+     * @param bean Producto del que se quieren obtener los alérgenos
+     * @return ArrayList de objetos Allergen asociados al producto
+     */
     @Override
     public ArrayList findAll(Object bean) {
 
