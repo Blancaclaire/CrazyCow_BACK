@@ -27,9 +27,9 @@ public class CustomerAction implements IAction{
                 strReturn =findAll();
                 break;
 
-            case "FIND_BY_ID":
-                //http://localhost:8080/CrazyCow_Server/Controller?ACTION=CUSTOMER.FIND_BY_ID&customer_id=13000
-                strReturn =findById(objectParams);
+            case "FIND_BY_EMAIL":
+                //http://localhost:8080/CrazyCow_Server/Controller?ACTION=CUSTOMER.FIND_BY_EMAIL&email=michael.johnson@example.com
+                strReturn =findByEmail(objectParams);
                 break;
 
             case "LOGIN":
@@ -38,7 +38,7 @@ public class CustomerAction implements IAction{
                 break;
 
             case "REGISTER":
-                //http://localhost:8080/CrazyCow_Server/Controller?ACTION=CUSTOMER.REGISTER&name=John&surname=Doe&email=john.doe@example.com&phone_number=123456789&user_name=johndoe&password=securepassword&address=123%20Main%20Street
+                //http://localhost:8080/CrazyCow_Server/Controller?ACTION=CUSTOMER.REGISTER&name=John&surname=Doe&email=clara@gmail.com&phone_number=123456789&user_name=blanca&password=securepassword&address=123%20Main%20Street
                 strReturn =register(objectParams);
                 break;
             default:
@@ -63,20 +63,20 @@ public class CustomerAction implements IAction{
     }
 
     /**
-     * Busca un cliente por ID.
-     * @param objectParams Debe contener customer_id
+     * Busca un cliente por email.
+     * @param objectParams Debe contener email
      */
-    public  String findById(Map<String, String[]>objectParams){
+    public  String findByEmail(Map<String, String[]>objectParams){
         String strReturn="";
         CustomerDao customerDao = new CustomerDao();
         Customer filtro = new Customer();
-        if (objectParams.get("customer_id")!=null && objectParams.get("customer_id").length>0){
-            filtro.setCustomer_id(Integer.parseInt(objectParams.get("customer_id")[0]));
+        if (objectParams.get("email")!=null && objectParams.get("email").length>0){
+            filtro.setEmail(objectParams.get("email")[0]);
         }
         else {
-            System.out.println("El parametro customer_id no llego correctamente" );
+            System.out.println("El parametro email no llego correctamente" );
         }
-        Customer customer = customerDao.findById(filtro.getCustomer_id());
+        Customer customer = customerDao.findByEmail(filtro.getEmail());
         strReturn=Customer.toJson(customer);
 
         return strReturn;

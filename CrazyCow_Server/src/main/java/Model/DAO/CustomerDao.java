@@ -22,7 +22,7 @@ public class CustomerDao implements IDao {
     private final String SQL_LOGIN = "SELECT * FROM CUSTOMERS WHERE email = ? and password = ? ";
     private final String SQL_ADD_CUSTOMER = "INSERT INTO CUSTOMERS (name, surname, email, phone_number, user_name, password, address) VALUES (?,?,?,?,?,?,?)";
     private final String SQL_FIND_ALL = "SELECT * FROM CUSTOMERS WHERE 1=1";
-    private final String SQL_FIND_BY_ID = "SELECT * FROM CUSTOMERS WHERE customer_id = ?";
+    private final String SQL_FIND_BY_EMAIL = "SELECT * FROM CUSTOMERS WHERE email = ?";
 
     private IMotorSql motorSql;
 
@@ -116,19 +116,19 @@ public class CustomerDao implements IDao {
 
     /**
      * Busca un cliente por su ID.
-     * @param customerId ID del cliente a buscar
+     * @param email ID del cliente a buscar
      * @return Objeto Customer encontrado o null si no existe
      */
-    public Customer findById(int customerId) {
+    public Customer findByEmail(String email) {
         Customer customer =null;
         PreparedStatement ps = null;
         ResultSet rs = null;
-        String sql = SQL_FIND_BY_ID;
+        String sql = SQL_FIND_BY_EMAIL;
 
         try {
             motorSql.connect();
             ps = motorSql.getConnection().prepareStatement(sql);
-            ps.setInt(1, customerId);
+            ps.setString(1, email);
             rs = ps.executeQuery();
 
             if (rs.next()) {
@@ -144,7 +144,7 @@ public class CustomerDao implements IDao {
 
             }
         } catch (SQLException sqlException) {
-            System.out.println("Error in findbyId" + sqlException.getMessage());
+            System.out.println("Error in findbyEmail" + sqlException.getMessage());
         } finally {
             motorSql.disconnect();
         }
