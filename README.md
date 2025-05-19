@@ -1,4 +1,12 @@
+<h1>URL AWS</h1>
+
+<p>
+
+URL lanzada con AWS: crazycow.retocsv.es/html
+</p>
+
 <h1>Conexiones con la base de datos</h1>
+
 <p>
 MYSQL_URL = "jdbc:mysql://db.cnfp5sduwtx2.us-east-1.rds.amazonaws.com:3306/CCdb"
 MYSQL_USER ="HR"
